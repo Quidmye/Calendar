@@ -742,7 +742,16 @@
       timePicker: true,
       timePicker24Hour: true,
       minYear: 1901,
-      format: 'DD.MM.YYYY',
+      locale: {
+            format: 'DD.MM.YYYY H:mm',
+            applyLabel: 'Готово',
+            cancelLabel: 'Отмена',
+            daysOfWeek: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+            monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+                'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь',
+                'Декабрь'],
+            firstDay: 1
+        },
       maxYear: parseInt(moment().format('YYYY'),10)
     }, function(start, end, label) {
 

@@ -6,6 +6,9 @@ class Calendar
 {
     public static function load()
     {
-        return view('Quidmye::layout');
+        $this->loadViewsFrom(__DIR__.'/views', 'Quidmye');
+        
+        return view('Qcalendar::layout');
     }
+   
 }

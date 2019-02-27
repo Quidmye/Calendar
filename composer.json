@@ -10,7 +10,7 @@
         "vlucas/phpdotenv": "^2.2",
         "orchestra/testbench": "^3.7"
     },
-    "license": "LOL",
+    "license": "MIT",
     "authors": [
         {
             "name": "Denis Koltsov"

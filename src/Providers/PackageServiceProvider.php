@@ -20,6 +20,6 @@ class PackageServiceProvider extends ServiceProvider
 
         $this->publishes([
         __DIR__.'/../../../resources/assets' => public_path('vendor/Quidmye'),
-    ], 'public');
+    ], 'Qcalendar');
     }
 }

@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/assets/Quidmye/js/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="/assets/Quidmye/js/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="/assets/Quidmye/js/bootstrap-daterangepicker/daterangepicker.css">
   <!-- fullCalendar -->
   <link rel="stylesheet" href="/assets/Quidmye/js/fullcalendar/dist/fullcalendar.min.css">
   <link rel="stylesheet" href="/assets/Quidmye/js/fullcalendar/dist/fullcalendar.print.min.css" media="print">
@@ -730,6 +731,7 @@
 <script src="/assets/Quidmye/js/jquery-ui/jquery-ui.min.js"></script>
 <script src="/assets/Quidmye/js/adminlte.min.js"></script>
 <script src="/assets/Quidmye/js/moment/moment.js"></script>
+<script src="/assets/Quidmye/js/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="/assets/Quidmye/js/fullcalendar/dist/fullcalendar.min.js"></script>
 <!-- Page specific script -->
 <script>

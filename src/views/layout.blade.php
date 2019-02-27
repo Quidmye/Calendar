@@ -736,6 +736,14 @@
 <!-- Page specific script -->
 <script>
   $(function () {
+    $('input#inputDateRange').daterangepicker({
+      singleDatePicker: true,
+      showDropdowns: true,
+      minYear: 1901,
+      maxYear: parseInt(moment().format('YYYY'),10)
+    }, function(start, end, label) {
+      
+    });
     /* initialize the external events
      -----------------------------------------------------------------*/
     function init_events(ele) {
@@ -755,6 +763,7 @@
         })
       })
     }
+
     init_events($('#external-events div.external-event'))
     /* initialize the calendar
      -----------------------------------------------------------------*/

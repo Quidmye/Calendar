@@ -44,9 +44,6 @@
           </div>
           <!-- /.box -->
 </section>
-
-<input type="text" name="birthday" value="10/24/1984" />
-
 <script>
 $(function() {
   $('input#inputDateRange').daterangepicker({

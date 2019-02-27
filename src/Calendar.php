@@ -6,6 +6,6 @@ class Calendar
 {
     public static function load()
     {
-        return view('Qcalendar::layout');
+        return view('Quidmye::layout');
     }
 }

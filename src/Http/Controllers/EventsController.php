@@ -23,6 +23,6 @@ class EventsController extends Controller
      */
     public function add()
     {
-        return view('Qcalendar::add_event');
+        return view('Qcalendar::events.add');
     }
 }

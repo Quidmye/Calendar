@@ -12,7 +12,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ route('events.add.post') }}">
+            <form role="form" action="{{ route('events.add.post') }}" method="post">
               {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">
@@ -44,17 +44,5 @@
           </div>
           <!-- /.box -->
 </section>
-<script>
-$(function() {
-  $('input#inputDateRange').daterangepicker({
-    singleDatePicker: true,
-    showDropdowns: true,
-    minYear: 1901,
-    maxYear: parseInt(moment().format('YYYY'),10)
-  }, function(start, end, label) {
-    var years = moment().diff(start, 'years');
-    alert("You are " + years + " years old!");
-  });
-});
-</script>
+
 @endsection

@@ -1,6 +1,6 @@
 <?php
 
-namespace Calendar;
+namespace Quidmye;
 
 class Calendar
 {

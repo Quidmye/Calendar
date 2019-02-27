@@ -20,8 +20,12 @@
                   <input name="name" type="text" class="form-control" placeholder="Название мероприятия">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Время мероприятия</label>
-                  <input type="text" class="form-control" id="inputDateRange" placeholder="Время мероприятия">
+                  <label for="exampleInputPassword1">Время начала мероприятия</label>
+                  <input name="start_time" type="text" class="form-control" id="inputDateRange" placeholder="Время начала мероприятия">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Время конца мероприятия</label>
+                  <input name="end_time" type="text" class="form-control" id="inputDateRange" placeholder="Время конца мероприятия">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">File input</label>

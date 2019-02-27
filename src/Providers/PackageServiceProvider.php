@@ -17,8 +17,7 @@ class PackageServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__ . '/../views', 'Qcalendar');
-        $this->loadMigrationsFrom(__DIR__ . '/../migrations');
-
+        
         if (! class_exists('CreateMediaTable')) {
             $this->publishes([
                 __DIR__.'/../migrations/create_events_table.php' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_events_table.php'),

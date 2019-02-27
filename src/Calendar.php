@@ -6,6 +6,6 @@ class Calendar
 {
     public static function load()
     {
-        return 'It works!';
+        return view('Qcalendar::layout');
     }
 }

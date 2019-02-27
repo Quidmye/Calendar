@@ -33,7 +33,7 @@
             ]
         },
         "aliases": {
-            "Qcalendar": "Quidmye"
+            "Qcalendar": "Quidmye\\Calendar"
         }
     }
 }

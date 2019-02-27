@@ -12,5 +12,5 @@
 */
 
 Route::prefix('events')->namespace('Quidmye\Http\Controllers')->group(function () {
-    Route::get('new', 'EventsController@add')->name('addevent');
+    Route::get('new', 'EventsController@add')->name('events.add');
 });

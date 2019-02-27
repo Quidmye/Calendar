@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->dateTime('start_at');
             $table->dateTime('end_at');
             $table->dateTime('reminder_at')->nullable();
+            $table->text('description');
             $table->unsignedInteger('user_id');
 
             $table->foreign('user_id')->references('id')->on('users')

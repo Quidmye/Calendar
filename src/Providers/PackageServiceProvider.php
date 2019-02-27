@@ -16,6 +16,6 @@ class PackageServiceProvider extends ServiceProvider
     
     public function boot()
     {
-        //
+        $this->loadViewsFrom(__DIR__.'/views', 'Quidmye');
     }
 }

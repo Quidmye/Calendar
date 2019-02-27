@@ -9,9 +9,9 @@
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="/assets/Quidmye/js/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/Quidmye/js/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="/assets/Quidmye/js/Ionicons/css/ionicons.min.css">
   <!-- fullCalendar -->
   <link rel="stylesheet" href="/assets/Quidmye/js/fullcalendar/dist/fullcalendar.min.css">
   <link rel="stylesheet" href="/assets/Quidmye/js/fullcalendar/dist/fullcalendar.print.min.css" media="print">

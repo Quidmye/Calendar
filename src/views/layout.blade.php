@@ -742,7 +742,7 @@
       timePicker: true,
       timePicker24Hour: true,
       minYear: 1901,
-      format: 'DD.MM.YYYY';
+      format: 'DD.MM.YYYY',
       maxYear: parseInt(moment().format('YYYY'),10)
     }, function(start, end, label) {
 

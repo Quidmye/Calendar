@@ -804,7 +804,7 @@
 <script src="/assets/Quidmye/js/jquery/dist/jquery.min.js"></script>
 <script src="/assets/Quidmye/js/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/assets/Quidmye/js/jquery-ui/jquery-ui.min.js"></script>
-<script src="/assets/Quidmye/js/adminlte.js"></script>
+<script src="/assets/Quidmye/js/adminlte.min.js"></script>
 <script src="/assets/Quidmye/js/moment/moment.js"></script>
 <script src="/assets/Quidmye/js/fullcalendar/dist/fullcalendar.min.js"></script>
 <!-- Page specific script -->

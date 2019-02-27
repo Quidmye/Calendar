@@ -4,7 +4,7 @@
 <section class="content">
   <div class="row">
         <!-- left column -->
-        <div class="col-md">
+        <div class="col-md-12">
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">

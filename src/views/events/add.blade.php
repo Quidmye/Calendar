@@ -12,7 +12,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" action="{{ route('Qcalendar::events.add.post') }}">
+            <form role="form" action="{{ route('events.add.post') }}">
               {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">

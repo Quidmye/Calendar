@@ -17,6 +17,7 @@ class PackageServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__ . '/../views', 'Qcalendar');
+        
         $this->publishes([
         __DIR__.'/../../assets' => public_path('vendor/Quidmye'),
     ], 'public');

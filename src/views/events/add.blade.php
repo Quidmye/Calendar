@@ -2,85 +2,118 @@
 
 @section('content')
 <section class="content">
-  <div class="box box-default">
-        <div class="box-header with-border">
-          <h3 class="box-title">Select2</h3>
+  <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Input Addon</h3>
+            </div>
+            <div class="box-body">
+              <div class="input-group">
+                <span class="input-group-addon">@</span>
+                <input type="text" class="form-control" placeholder="Username">
+              </div>
+              <br>
 
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
-          </div>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Minimal</label>
-                <select class="form-control select2" style="width: 100%;">
-                  <option selected="selected">Alabama</option>
-                  <option>Alaska</option>
-                  <option>California</option>
-                  <option>Delaware</option>
-                  <option>Tennessee</option>
-                  <option>Texas</option>
-                  <option>Washington</option>
-                </select>
+              <div class="input-group">
+                <input type="text" class="form-control">
+                <span class="input-group-addon">.00</span>
               </div>
-              <!-- /.form-group -->
-              <div class="form-group">
-                <label>Disabled</label>
-                <select class="form-control select2" disabled="disabled" style="width: 100%;">
-                  <option selected="selected">Alabama</option>
-                  <option>Alaska</option>
-                  <option>California</option>
-                  <option>Delaware</option>
-                  <option>Tennessee</option>
-                  <option>Texas</option>
-                  <option>Washington</option>
-                </select>
+              <br>
+
+              <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input type="text" class="form-control">
+                <span class="input-group-addon">.00</span>
               </div>
-              <!-- /.form-group -->
+
+              <h4>With icons</h4>
+
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <br>
+
+              <div class="input-group">
+                <input type="text" class="form-control">
+                <span class="input-group-addon"><i class="fa fa-check"></i></span>
+              </div>
+              <br>
+
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                <input type="text" class="form-control">
+                <span class="input-group-addon"><i class="fa fa-ambulance"></i></span>
+              </div>
+
+              <h4>With checkbox and radio inputs</h4>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="input-group">
+                        <span class="input-group-addon">
+                          <input type="checkbox">
+                        </span>
+                    <input type="text" class="form-control">
+                  </div>
+                  <!-- /input-group -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                  <div class="input-group">
+                        <span class="input-group-addon">
+                          <input type="radio">
+                        </span>
+                    <input type="text" class="form-control">
+                  </div>
+                  <!-- /input-group -->
+                </div>
+                <!-- /.col-lg-6 -->
+              </div>
+              <!-- /.row -->
+
+              <h4>With buttons</h4>
+
+              <p class="margin">Large: <code>.input-group.input-group-lg</code></p>
+
+              <div class="input-group input-group-lg">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Action
+                    <span class="fa fa-caret-down"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+                <!-- /btn-group -->
+                <input type="text" class="form-control">
+              </div>
+              <!-- /input-group -->
+              <p class="margin">Normal</p>
+
+              <div class="input-group">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-danger">Action</button>
+                </div>
+                <!-- /btn-group -->
+                <input type="text" class="form-control">
+              </div>
+              <!-- /input-group -->
+              <p class="margin">Small <code>.input-group.input-group-sm</code></p>
+
+              <div class="input-group input-group-sm">
+                <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-info btn-flat">Go!</button>
+                    </span>
+              </div>
+              <!-- /input-group -->
             </div>
-            <!-- /.col -->
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Multiple</label>
-                <select class="form-control select2" multiple="multiple" data-placeholder="Select a State"
-                        style="width: 100%;">
-                  <option>Alabama</option>
-                  <option>Alaska</option>
-                  <option>California</option>
-                  <option>Delaware</option>
-                  <option>Tennessee</option>
-                  <option>Texas</option>
-                  <option>Washington</option>
-                </select>
-              </div>
-              <!-- /.form-group -->
-              <div class="form-group">
-                <label>Disabled Result</label>
-                <select class="form-control select2" style="width: 100%;">
-                  <option selected="selected">Alabama</option>
-                  <option>Alaska</option>
-                  <option disabled="disabled">California (disabled)</option>
-                  <option>Delaware</option>
-                  <option>Tennessee</option>
-                  <option>Texas</option>
-                  <option>Washington</option>
-                </select>
-              </div>
-              <!-- /.form-group -->
-            </div>
-            <!-- /.col -->
+            <!-- /.box-body -->
           </div>
-          <!-- /.row -->
-        </div>
-        <!-- /.box-body -->
-        <div class="box-footer">
-          
-        </div>
-      </div>
+          <!-- /.box -->
       <!-- /.box -->
 </section>
 @endsection

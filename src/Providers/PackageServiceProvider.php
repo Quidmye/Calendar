@@ -1,6 +1,6 @@
 <?php
 
-namespace Calendar\Providers;
+namespace Quidmye\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

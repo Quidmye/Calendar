@@ -106,19 +106,6 @@
 
   init_events($('#external-events div.external-event'))
 
-  function loadEvents(){
-    $.ajax({
-      url: "{{ route('events.list') }}",
-      success: function( data ) {
-        $.each(data, function( index, value ) {
-          data.start = new Date(data.start);
-          data.end = new Date(data.end);
-        });
-        console.log(data);
-        return data;
-        }
-    });
-  }
 
   /* initialize the calendar
    -----------------------------------------------------------------*/
@@ -151,11 +138,12 @@
       },
       success: function(doc) {
         var events = [];
-        $(doc).each(function() {
+        $.each(doc, function(var){
           events.push({
-            title: $(this).attr('title'),
-            start: $(this).attr('start') // will be parsed
+            title: var.title,
+            start: new Date(var.start) // will be parsed
           });
+        })
         });
         callback(events);
       }

@@ -780,7 +780,7 @@
         $(this).ajaxSubmit({  // pre-submit callback
             success:       showResponse,  // post-submit callback
             error:         function(xhr, textStatus, errorThrown)  {
-              $(this).parent().prepend("<p>Test</p>");
+              $(this).prepend("<p>Test</p>");
             }
         });
 

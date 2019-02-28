@@ -12,4 +12,9 @@ class User extends Model
     {
         return $this->belongsToMany('Quidmye\Event');
     }
+
+    public function tokens()
+    {
+        return $this->belongsToMany('Quidmye\Token');
+    }
 }

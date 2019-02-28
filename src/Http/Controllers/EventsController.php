@@ -90,6 +90,17 @@ class EventsController extends Controller
         }
     }
 
+    public function delete_file($id){
+      $file = EventFiles::findOrFail($id);
+      if($file->event()->user()->id != \Auth::user()->id){
+        abort();
+      }
+
+      $file->delete();
+
+      return true;
+    }
+
     private function uploadFile($data, $event){
       foreach ($data as $file) {
         $path = $file->store('public/events');

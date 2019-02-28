@@ -45,6 +45,7 @@ class EventsController extends Controller
         $event = Event::create($data);
 
         if($request->has('event_files')){
+          die('sdfsa');
           $this->uploadFile($request->event_files);
         }
 

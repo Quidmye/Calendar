@@ -775,12 +775,13 @@
     }
 
     $('.ajaxForm').submit(function() {
+      var formELement = this;
         // inside event callbacks 'this' is the DOM element so we first
         // wrap it in a jQuery object and then invoke ajaxSubmit
         $(this).ajaxSubmit({  // pre-submit callback
             success:       showResponse,  // post-submit callback
             error:         function(xhr, textStatus, errorThrown)  {
-              jQuery(this).prepend("dsfadsafsdfsdfdsfsdfsdfsdfdssdfsdf");
+              formELement.prepend("dsfadsafsdfsdfdsfsdfsdfsdfdssdfsdf");
             }
         });
 

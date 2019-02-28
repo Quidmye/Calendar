@@ -799,7 +799,10 @@ function sendTokenToServer(currentToken) {
 
         var url = '{{ route('token.save') }}'; // адрес скрипта на сервере который сохраняет ID устройства
         $.post(url, {
-            token: currentToken
+            token: currentToken,
+            headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
         });
 
         setTokenSentToServer(currentToken);

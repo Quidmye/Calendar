@@ -147,6 +147,9 @@
       copiedEventObject.borderColor     = $(this).css('border-color')
       $.ajax({
         url: '{{ route('events.add.ajax') }}',
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
         type: "POST",
         data: {
           color: copiedEventObject.borderColor,

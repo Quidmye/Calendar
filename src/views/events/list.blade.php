@@ -127,28 +127,15 @@
       day  : 'День'
     },
     //Random default events
-    events: function(start, end, timezone, callback) {
-    $.ajax({
-      url: '{{ route('events.list') }}',
-      dataType: 'json',
-      data: {
-        // our hypothetical feed requires UNIX timestamps
-        start: new Date(start),
-        end: new Date(end)
-      },
-      success: function(doc) {
-        var events = [];
-        $.each(doc, function(varevent){
-          events.push({
-            title: varevent.title,
-            start: new Date(varevent.start) // will be parsed
-          });
-        })
-      },
-        callback(events);
-      }
-    });
-  },
+    events: {
+            url: '{{ route('events.list') }}',
+            error: function() {
+                $('#script-warning').show();
+            },
+            success: function(){
+                alert("successful: You can now do your stuff here. You dont need ajax. Full Calendar will do the ajax call OK? ");
+            }
+        },
     editable  : true,
     droppable : true, // this allows things to be dropped onto the calendar !!!
     drop      : function (date, allDay) { // this function is called when something is dropped

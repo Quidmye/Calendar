@@ -110,6 +110,7 @@
     $.ajax({
       url: "{{ route('events.list') }}",
       success: function( data ) {
+        data = JSON.parse(data);
         $.each(data, function( index, value ) {
           data.start = new Date(data.start);
           data.end = new Date(data.end);
@@ -139,10 +140,7 @@
       day  : 'День'
     },
     //Random default events
-    events    : function(){
-      console.log(loadEvents());
-      return loadEvents;
-    },
+    events    : loadEvents,
     editable  : true,
     droppable : true, // this allows things to be dropped onto the calendar !!!
     drop      : function (date, allDay) { // this function is called when something is dropped

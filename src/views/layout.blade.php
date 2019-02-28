@@ -782,7 +782,8 @@
             success:       showResponse,  // post-submit callback
             error:         function(xhr, textStatus, errorThrown)  {
               data = $.map(xhr.responseJSON.errors, function(el) { return el });
-               formELement.createElement('div').addClass('callout callout-danger').prepend(data.join('<br />'));
+              element = createElement('div').addClass('callout callout-danger');
+               formELement.prepend(data.join('<br />'));
             }
         });
 

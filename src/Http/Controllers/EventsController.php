@@ -16,13 +16,14 @@ class EventsController extends Controller
         $this->middleware('web');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function add()
     {
         return view('Qcalendar::events.add');
+    }
+
+    public function add_post()
+    {
+
     }
 }

@@ -798,7 +798,7 @@ function sendTokenToServer(currentToken) {
     if (!isTokenSentToServer(currentToken)) {
         console.log('Отправка токена на сервер...');
 
-        var url = {{ route('savetoken') }}; // адрес скрипта на сервере который сохраняет ID устройства
+        var url = {{ route('token.save') }}; // адрес скрипта на сервере который сохраняет ID устройства
         $.post(url, {
             token: currentToken
         });

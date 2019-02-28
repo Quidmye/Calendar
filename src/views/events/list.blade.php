@@ -135,7 +135,7 @@
             data.end = new Date(data.end);
           });
           return data;
-          })
+          }
       });
     },
     editable  : true,

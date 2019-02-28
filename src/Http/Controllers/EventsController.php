@@ -48,6 +48,16 @@ class EventsController extends Controller
 
     }
 
+    public function edit($id){
+      $event = Event::findOrFail($id);
+
+      if($event->user_id !== \Auth::user()->id){
+        abort(404);
+      }
+
+      return view('Qcalendar::events.edit', ['event' => $event]);
+    }
+
     public function add_post(EventAddRequest $request)
     {
         $data = [

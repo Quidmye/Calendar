@@ -743,7 +743,7 @@
       timePicker24Hour: true,
       minYear: 1901,
       locale: {
-            format: 'DD.MM.YYYY H:mm',
+            format: 'DD.MM.YYYY HH:mm',
             applyLabel: 'Готово',
             cancelLabel: 'Отмена',
             daysOfWeek: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],

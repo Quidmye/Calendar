@@ -129,13 +129,14 @@
     events    : function(){
       $.ajax({
         url: "{{ route('events.list') }}",
-      }).done(function( data ) {
-        $.each(data, function( index, value ) {
-          data.start = new Date(data.start);
-          data.end = new Date(data.end);
-        });
-        return data;
-        });
+        success: function( data ) {
+          $.each(data, function( index, value ) {
+            data.start = new Date(data.start);
+            data.end = new Date(data.end);
+          });
+          return data;
+          })
+      });
     },
     editable  : true,
     droppable : true, // this allows things to be dropped onto the calendar !!!

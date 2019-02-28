@@ -31,7 +31,7 @@
                   <label for="reminder_time">Напоминание</label>
                   <div class="input-group">
                         <span class="input-group-addon">
-                          <input name="reminder" type="checkbox">
+                          <input @if($event->reminder_at) checked="checked" @endif name="reminder" type="checkbox">
                         </span>
                     <input @if($event->reminder_at) value="{{ $event->reminder_at->format('d.m.Y H:i') }}" @endif name="reminder_time" type="text" class="form-control eventTimePicker">
                   <!-- /input-group -->
@@ -39,7 +39,7 @@
               </div>
                 <div class="form-group">
                   <label for="description">Описание мероприятия</label>
-                  <textarea name="description" class="form-control" id="description" rows="3" placeholder="Описание мероприятия"></textarea>
+                  <textarea name="description" class="form-control" id="description" rows="3" placeholder="Описание мероприятия">{{ $event->description }}</textarea>
                 </div>
                 <div class="form-group">
                   <label for="EventFiles">Дополнительные файлы (изображения, аудио)</label>

@@ -65,9 +65,6 @@ class EventsController extends Controller
 
     private function uploadFile($data, $event){
       $dir = 'public/events/' . date('Y/m/d');
-      if(!is_dir($dir)){
-        mkdir($dir ,0777, true);
-      }
       foreach ($data as $file) {
         $path = $file->store($dir);
         if(in_array($file->getMimeType(), ['image/gif', 'image/jpeg', 'image/pjpeg', 'image/png'])){
@@ -76,7 +73,7 @@ class EventsController extends Controller
           $type = 'audio';
         }
         EventFiles::create([
-          'path' => $path,
+          'path' => '/' . $path,
           'type' => $type,
           'event_id'  => $event->id
         ]);

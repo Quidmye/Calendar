@@ -63,7 +63,6 @@ class EventsController extends Controller
         mkdir($dir ,0777, true);
       }
       foreach ($data as $file) {
-        die('sdfsa');
         $path = $dir . $file->getClientOriginalName() . '.' . $file->getClientOriginalExtension();
         if(file_exists($path)){
           $path = $dir . microtime() . '.' . $file->getClientOriginalExtension();

@@ -3,6 +3,7 @@
 namespace Quidmye\Http\Controllers;
 
 use Illuminate\Routing\Controller;
+use Quidmye\Http\Requests\EventAddRequest;
 
 class EventsController extends Controller
 {
@@ -22,7 +23,7 @@ class EventsController extends Controller
         return view('Qcalendar::events.add');
     }
 
-    public function add_post()
+    public function add_post(EventAddRequest $request)
     {
 
     }

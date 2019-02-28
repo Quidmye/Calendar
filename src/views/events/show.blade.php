@@ -10,6 +10,7 @@
             </div>
             <div class="box-body pad table-responsive">
               @if($event->description)
+              <b>Описание:</b><br />
                 <p>{{ $event->description }}</p>
               @endif
 

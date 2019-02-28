@@ -29,7 +29,7 @@ class EventAddRequest extends FormRequest
             "start_time" => "required|date_format:d.m.Y H:i",
             "end_time" => "required|date_format:d.m.Y H:i|after_or_equal:start_time",
             "description" => "max:500",
-            "event_files" =>  "max:10240|nullable|mimetypes:audio/mpeg,audio/ogg,audio/webm,image/gif,image/jpeg,image/pjpeg,image/png"
+            "event_files.*" =>  "max:10240|nullable|mimetypes:audio/mpeg,audio/ogg,audio/webm,image/gif,image/jpeg,image/pjpeg,image/png"
         ];
 
         if($request->has('reminder')){

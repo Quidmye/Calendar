@@ -808,8 +808,9 @@
         });
         return false;
     });
-    
+
   @yield('script')
+})
 </script>
 </body>
 </html>

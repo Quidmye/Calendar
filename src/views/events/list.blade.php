@@ -79,7 +79,6 @@
 </section>
 @endsection
 @section('script')
-$(function () {
 
   /* initialize the external events
    -----------------------------------------------------------------*/

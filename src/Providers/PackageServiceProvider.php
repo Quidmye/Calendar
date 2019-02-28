@@ -22,9 +22,12 @@ class PackageServiceProvider extends ServiceProvider
 
         // Тут украденный костыль. loadMigrationsFrom работал через задницу
         if (! class_exists('CreateEventsTable')) {
-            $this->publishes([
-                __DIR__.'/../migrations/create_events_table.php' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_events_table.php'),
-            ], 'migrations');
+          $this->publishes([
+              __DIR__.'/../migrations/create_events_table.php' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_events_table.php'),
+          ], 'migrations');
+          $this->publishes([
+              __DIR__.'/../migrations/create_events_files_table.php' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_events_files_table.php'),
+          ], 'migrations');
         }
 
         $this->publishes([

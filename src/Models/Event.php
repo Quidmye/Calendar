@@ -17,12 +17,12 @@ class Event extends Model
 
     public function user()
     {
-        return $this->belongsTo('Quidmye\User');
+        return $this->belongsTo('Quidmye\Models\User');
     }
 
     public function files()
     {
-        return $this->hasMany('Quidmye\EventFiles');
+        return $this->hasMany('Quidmye\Models\EventFiles');
     }
 
     public function setStartAtAttribute($value){

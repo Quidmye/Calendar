@@ -40,7 +40,7 @@ class EventsController extends Controller
       ];
 
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, "https://fcm.googleapis.com/fcm/send");
+      curl_setopt($ch, CURLOPT_URL, "https://quidmy-2ed55.firebaseio.com");
       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
       curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
       curl_setopt($ch, CURLOPT_POSTFIELDS, $body);

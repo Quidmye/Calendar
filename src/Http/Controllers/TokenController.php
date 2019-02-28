@@ -6,7 +6,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Quidmye\Models\Token;
 
-class EventsController extends Controller
+class TokenController extends Controller
 {
     /**
      * Create a new controller instance.

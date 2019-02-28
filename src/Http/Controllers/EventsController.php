@@ -70,6 +70,7 @@ class EventsController extends Controller
         if(!$file->move($path)){
           die($path);
         }
+        die($path);
         if(in_array($file->getMimeType(), ['image/gif', 'image/jpeg', 'image/pjpeg', 'image/png'])){
           $type = 'image';
         }else{

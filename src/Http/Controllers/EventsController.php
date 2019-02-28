@@ -4,6 +4,7 @@ namespace Quidmye\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use Quidmye\Http\Requests\EventAddRequest;
+use Quidmye\Http\Requests\EventEditRequest;
 use Quidmye\Models\Event;
 use Quidmye\Models\EventFiles;
 
@@ -56,6 +57,46 @@ class EventsController extends Controller
       }
 
       return view('Qcalendar::events.edit', ['event' => $event]);
+    }
+
+    public function edit_post($id, EventEditRequest $request){
+
+      $event = Event::findOrFail($id);
+
+      if($event->user_id !== \Auth::user()->id){
+        abort(404);
+      }
+
+
+      $data = [
+        'name'        =>  $request->input('name'),
+        'start_at'    =>  $request->input('start_time'),
+        'end_at'      =>  $request->input('end_time'),
+        'description' =>  $request->input('description'),
+        'user_id'     =>  \Auth::user()->id
+      ];
+
+      //Да, с краткими записями не успел подружиться
+      if($request->has('reminder')){
+        $data['reminder_at'] = $request->input('reminder_time');
+      }else{
+        $data['reminder_at'] = NULL;
+      }
+
+      $event->update($data);
+
+      if($request->has('event_files')){
+        $this->uploadFile($request->event_files, $event);
+      }
+
+      if($request->ajax()){
+        return [
+          'redirect'  =>  route('event', $event)
+        ];
+      }else{
+        redirect(route('event', $event));
+      }
+
     }
 
     public function add_post(EventAddRequest $request)

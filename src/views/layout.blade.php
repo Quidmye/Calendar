@@ -782,8 +782,7 @@
             success:       showResponse,  // post-submit callback
             error:         function(xhr, textStatus, errorThrown)  {
               data = JSON.parse(xhr.responseText);
-              console.log(data);
-              formELement.prepend("<div class=\"callout callout-danger\">" + data.join("<br />") + "</div>");
+              formELement.prepend("<div class=\"callout callout-danger\">" + Array.prototype.join.call(data.errors, "<br />") + "</div>");
             }
         });
 

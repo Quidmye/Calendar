@@ -33,6 +33,7 @@ class EventsController extends Controller
         'name' => $request->input('name'),
         'start_at' => $request->input('time'),
         'end_at' => $request->input('time'),
+        'user_id' => \Auth::user()->id
       ]);
       return $event;
     }

@@ -20,14 +20,13 @@ class SendWebPush implements ShouldQueue
     private $api_key = 'AAAAwPQ7cNU:APA91bFac0N-eq4kdAsCpU9Gb7QECDmJjKEp2WbtRMyEhn6vlUxXijDsfzU7dwI_udKnlmaKsdKtzFoMIlWLDCKoJ_eLe9hof58MfPBTi4UydGgU9ugn_r1x15_jlJU9l0PS4uhdhi_E';
     private $url = 'https://fcm.googleapis.com/fcm/send';
 
-    public function __construct(Event $event)
+    public function __construct()
     {
-        $this->event = $event;
     }
 
     public function handle()
     {
-        $this->event->where('remider_at', Carbon::now()->format("Y-m-d H:i:00"))
+        $this->event = Event::where('remider_at', Carbon::now()->format("Y-m-d H:i:00"))
           ->orWhere('start_at', Carbon::now()->format("Y-m-d H:i:00"))
             ->chunk(100, function($events){
                 foreach ($events as $event) {

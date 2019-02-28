@@ -736,7 +736,7 @@
 <!-- Page specific script -->
 <script>
   $(function () {
-    $('input#inputDateRange').daterangepicker({
+    $('input.eventTimePicker').daterangepicker({
       singleDatePicker: true,
       showDropdowns: true,
       timePicker: true,

@@ -16,16 +16,20 @@
               {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Название мероприятия</label>
-                  <input name="name" type="text" class="form-control" placeholder="Название мероприятия">
+                  <label for="event_name">Название мероприятия</label>
+                  <input id="event_name" name="name" type="text" class="form-control" placeholder="Название мероприятия">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Время начала мероприятия</label>
-                  <input name="start_time" type="text" class="form-control" id="inputDateRange" placeholder="Время начала мероприятия">
+                  <label for="start_time">Время начала мероприятия</label>
+                  <input name="start_time" type="text" class="form-control eventTimePicker" id="start_time" placeholder="Время начала мероприятия">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Время конца мероприятия</label>
-                  <input name="end_time" type="text" class="form-control" id="inputDateRange" placeholder="Время конца мероприятия">
+                  <label for="end_time">Время конца мероприятия</label>
+                  <input name="end_time" type="text" class="form-control eventTimePicker" id="end_time" placeholder="Время конца мероприятия">
+                </div>
+                <div class="form-group">
+                  <label for="description">Описание мероприятия</label>
+                  <textarea name="description" class="form-control" id="description" rows="3" placeholder="Описание мероприятия"></textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">File input</label>

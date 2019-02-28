@@ -33,7 +33,7 @@ class EventsController extends Controller
           'description' =>  $request->input('description'),
           'user_id'     =>  \Auth::user()->id
         ];
-        
+
         //Да, с краткими записями не успел подружиться
         if($request->has('reminder')){
           $data['reminder_at'] = $request->input('reminder_time');
@@ -43,6 +43,12 @@ class EventsController extends Controller
 
         $event = Event::create($data);
 
-        return $event;
+        if($request->ajax()){
+          return [
+            'redirect'  =>  route('event', $event)
+          ];
+        }else{
+          redirect(route('event', $event));
+        }
     }
 }

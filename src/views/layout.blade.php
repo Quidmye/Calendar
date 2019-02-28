@@ -780,7 +780,11 @@
         // inside event callbacks 'this' is the DOM element so we first
         // wrap it in a jQuery object and then invoke ajaxSubmit
         $(this).ajaxSubmit({  // pre-submit callback
-            success:       showResponse,  // post-submit callback
+            success:       function(responseText, statusText, xhr, $form){
+                if(xhr.responseJSON.redirect){
+                  window.location = xhr.responseJSON.redirect;
+                }
+            },  // post-submit callback
             error:         function(xhr, textStatus, errorThrown)  {
               data = $.map(xhr.responseJSON.errors, function(el) { return el });
               element = document.createElement('div');

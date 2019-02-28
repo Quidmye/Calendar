@@ -5,6 +5,7 @@ namespace Quidmye\Http\Controllers;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Quidmye\Http\Requests\EventAddRequest;
+use Quidmye\Http\Requests\EventAddAjaxRequest;
 use Quidmye\Http\Requests\EventEditRequest;
 use Quidmye\Models\Event;
 use Quidmye\Models\EventFiles;
@@ -25,6 +26,15 @@ class EventsController extends Controller
     public function add()
     {
         return view('Qcalendar::events.add');
+    }
+
+    public function add_ajax(EventAddAjaxRequest $request){
+      $event = Event::create([
+        'name' => $request->input('name'),
+        'start_at' => $request->input('time'),
+        'end_at' => $request->input('time'),
+      ]);
+      return $event;
     }
 
     public function show($id){

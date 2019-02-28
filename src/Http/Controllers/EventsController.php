@@ -33,7 +33,13 @@ class EventsController extends Controller
           'description' =>  $request->input('description'),
           'user_id'     =>  \Auth::user()->id
         ];
-        $data['reminder_at'] = $request->has('reminder') ? $request->input('reminder_time') : null;
+        
+        //Да, с краткими записями не успел подружиться
+        if($request->has('reminder')){
+          $data['reminder_at'] = $request->input('reminder_time');
+        }else{
+          $data['reminder_at'] = NULL;
+        }
 
         $event = Event::create($data);
 

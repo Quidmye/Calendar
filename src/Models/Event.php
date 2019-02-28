@@ -18,4 +18,16 @@ class Event extends Model
     {
         return $this->belongsTo('Quidmye\User');
     }
+
+    public function setStartTImeAttribute($value){
+      $this->attributes['start_at'] = \Carbon::parse($value)->format("Y-m-d H:i:00");
+    }
+
+    public function setEndTImeAttribute($value){
+      $this->attributes['end_at'] = \Carbon::parse($value)->format("Y-m-d H:i:00");
+    }
+
+    public function setEndTImeAttribute($value){
+      $this->attributes['reminder_at'] = \Carbon::parse($value)->format("Y-m-d H:i:00");
+    }
 }

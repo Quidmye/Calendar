@@ -6,7 +6,7 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header">
-              <h3 class="box-title">{{ $event->name }}</h3>
+              <h3 class="box-title">{{ $event->name }}</h3>{{ $event->start_at }} @if($event->start_at != $event->end_at) - {{ $event->end_at }} @endif
             </div>
             <div class="box-body pad table-responsive">
               @if($event->description)

@@ -5,7 +5,7 @@ namespace Quidmye\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
-class EventAddRequest extends FormRequest
+class EventEditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

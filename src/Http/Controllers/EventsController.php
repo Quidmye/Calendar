@@ -47,7 +47,7 @@ class EventsController extends Controller
         if($request->has('event_files')){
           $dir = public_path('storage/' . date('Y/m/d'));
           if(!is_dir($dir)){
-            mkdir($dir 0777, true);
+            mkdir($dir ,0777, true);
           }
           foreach ($request->event_files as $file) {
             $path = $dir . $file->getClientOriginalName() . '.' . $file->getClientOriginalExtension();

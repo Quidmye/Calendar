@@ -31,7 +31,7 @@
                   <label for="reminder_time">Напоминание</label>
                   <div class="input-group">
                         <span class="input-group-addon">
-                          <input name="reminder" type="checkbox">
+                          <input id="subscribe" name="reminder" type="checkbox">
                         </span>
                     <input name="reminder_time" type="text" class="form-control eventTimePicker">
                   <!-- /input-group -->

@@ -28,6 +28,9 @@ class PackageServiceProvider extends ServiceProvider
           $this->publishes([
               __DIR__.'/../migrations/create_events_files_table.php' => database_path('migrations/'.date('Y_m_d_His', time()+1).'_create_events_files_table.php'),
           ], 'migrations');
+          $this->publishes([
+              __DIR__.'/../migrations/create_users_push_tokens_table.php' => database_path('migrations/'.date('Y_m_d_His', time()).'_users_push_tokens_table.php'),
+          ], 'migrations');
         }
 
         $this->publishes([

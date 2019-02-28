@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/savetoken', 'TokenController@save')->name('token.save');
 
 Route::prefix('event')->namespace('Quidmye\Http\Controllers')->group(function () {
     Route::get('new', 'EventsController@add')->name('events.add');

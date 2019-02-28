@@ -16,7 +16,7 @@ class CreateEventsFilesTable extends Migration
         Schema::create('events_files', function (Blueprint $table) {
             $table->increments('id');
             $table->string('path');
-            $table->enum('type', ['audio', 'image']);
+            $table->string('type');
             $table->unsignedInteger('event_id');
             $table->foreign('event_id')->references('id')->on('events')
               ->onDelete('cascade');

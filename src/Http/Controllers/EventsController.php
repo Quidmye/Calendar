@@ -64,7 +64,7 @@ class EventsController extends Controller
       }
       foreach ($data as $file) {
         $path = $file->store($dir);
-        if(!in_array($file->getMimeType(), ['image/gif', 'image/jpeg', 'image/pjpeg', 'image/png'])){
+        if(in_array($file->getMimeType(), ['image/gif', 'image/jpeg', 'image/pjpeg', 'image/png'])){
           $type = 'image';
         }else{
           $type = 'audio';

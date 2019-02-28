@@ -30,8 +30,8 @@ class EventsController extends Controller
             'to' => "dK8o8wUECrY:APA91bEFFoWdaNQmcskdyAd7ZxtY90pHoqU_I1yBOStT-rqMiJ7ljnglNl4rtfXw6irXrDCjGr6QrU94MIoPjepR4K6yeT8nSeOokrVhi_DdgrxXVqXkNZ8xghPcqYN1ppk1k_ivhNqd",
             'project_id' => 'quidmy-2ed55',
             'notification' => [
-                'title' => 'dsadsadasdasdas',
-                'body'  => 'dsdsadsasaddsadsadadasdasdasdsadsadsaads',
+                'title' => str_random(100),
+                'body'  => tr_random(100),
                 'icon'  => 'https://quidmy.live/assets/Quidmye/img/user2-160x160.jpg',
                 'click_action' => "https://quidmy.live/events",
               ],

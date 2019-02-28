@@ -49,7 +49,6 @@ class EventsController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         $response = curl_exec($ch);
-        dd($response);
         curl_close($ch);
 
         return view('Qcalendar::events.add');

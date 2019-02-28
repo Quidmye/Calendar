@@ -256,7 +256,7 @@
             </ul>
           </li>
           <li class="user-menu">
-            <a href="https://github.com/Quidmye/Calenda">GitHub</a>
+            <a target="_blank" href="https://github.com/Quidmye/Calendar">GitHub</a>
           </li>
           @guest
           <li class="user-menu"><a href="{{ route('login') }}">Войти</a></li>

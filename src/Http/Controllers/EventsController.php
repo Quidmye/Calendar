@@ -150,11 +150,11 @@ class EventsController extends Controller
 
 
       if($request->get('start')){
-        $where[] = ['start_at', '>=', $request->get('start')]
+        $where[] = ['start_at', '>=', $request->get('start')];
       }
 
       if($request->get('end')){
-        $where[] = ['end_at', '<=', $request->get('end')]
+        $where[] = ['end_at', '<=', $request->get('end')];
       }
       $list = Event::where($where)->get();
       $response = [];

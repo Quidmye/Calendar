@@ -110,7 +110,6 @@
     $.ajax({
       url: "{{ route('events.list') }}",
       success: function( data ) {
-        data = JSON.parse(data);
         $.each(data, function( index, value ) {
           data.start = new Date(data.start);
           data.end = new Date(data.end);

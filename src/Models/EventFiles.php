@@ -10,7 +10,7 @@ class EventFiles extends Model
     protected $table = 'events_files';
 
     protected $fillable = [
-        'path', 'event_id'
+        'path', 'event_id', 'type'
     ];
 
     public function event()

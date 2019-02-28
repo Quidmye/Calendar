@@ -18,6 +18,7 @@ class PackageServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../views', 'Qcalendar');
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        $this->loadTranslationsFrom(__DIR__.'/../translations', 'Qcalendar');
 
         if (! class_exists('CreateEventsTable')) {
             $this->publishes([

@@ -65,7 +65,7 @@ class EventsController extends Controller
 
     private function uploadFile($data, $event){
       foreach ($data as $file) {
-        $path = $file->store('events');
+        $path = $file->store('public/events');
         if(in_array($file->getMimeType(), ['image/gif', 'image/jpeg', 'image/pjpeg', 'image/png'])){
           $type = 'image';
         }else{

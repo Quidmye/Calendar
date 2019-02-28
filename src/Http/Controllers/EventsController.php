@@ -31,7 +31,7 @@ class EventsController extends Controller
           'start_at'    =>  $request->input('start_time'),
           'end_at'      =>  $request->input('end_time'),
           'description' =>  $request->input('description'),
-          'user_id'     =>  \Auth::user()->id
+          'user_id'     =>  \Auth::id()
         ];
         $data['reminder_at'] = $request->has('reminder') ? $request->input('reminder_time') : null;
 

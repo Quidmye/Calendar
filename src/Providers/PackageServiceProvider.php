@@ -33,5 +33,8 @@ class PackageServiceProvider extends ServiceProvider
         $this->publishes([
         __DIR__.'/../../resources/assets' => public_path('assets/Quidmye'),
     ], 'Qcalendar');
+    $this->publishes([
+    __DIR__.'/../../resources/assets/firebase-messaging-sw.js' => public_path('assets/Quidmye'),
+], 'Qcalendar');
     }
 }

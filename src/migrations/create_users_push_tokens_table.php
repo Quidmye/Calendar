@@ -14,6 +14,7 @@ class UsersPushTokensTable extends Migration
     public function up()
     {
         Schema::create('users_push_tokens', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('token');
             $table->unsignedInteger('user_id');
 

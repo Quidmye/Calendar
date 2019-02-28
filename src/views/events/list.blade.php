@@ -114,6 +114,7 @@
           data.start = new Date(data.start);
           data.end = new Date(data.end);
         });
+        console.log('data');
         return data;
         }
     });

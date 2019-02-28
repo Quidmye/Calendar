@@ -92,7 +92,8 @@ class EventsController extends Controller
 
     public function delete_file($id){
       $file = EventFiles::findOrFail($id);
-      if($file->event()->user_id != \Auth::user()->id){
+      $event = $file->event()->first();
+      if($event->user_id != \Auth::user()->id){
         abort();
       }
 

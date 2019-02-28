@@ -45,7 +45,6 @@ class EventsController extends Controller
         $event = Event::create($data);
 
         if($request->has('event_files')){
-          die('sdfsa');
           $this->uploadFile($request->event_files);
         }
 
@@ -64,6 +63,7 @@ class EventsController extends Controller
         mkdir($dir ,0777, true);
       }
       foreach ($data as $file) {
+        die('sdfsa');
         $path = $dir . $file->getClientOriginalName() . '.' . $file->getClientOriginalExtension();
         if(file_exists($path)){
           $path = $dir . microtime() . '.' . $file->getClientOriginalExtension();

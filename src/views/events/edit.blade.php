@@ -42,7 +42,7 @@
                   <textarea name="description" class="form-control" id="description" rows="3" placeholder="Описание мероприятия">{{ $event->description }}</textarea>
                 </div>
                 <div class="form-group">
-                  @foreach ($event->files() as $file)
+                  @foreach ($event->files()->get() as $file)
                   <a  class="btn btn-app">
                     <a href="{{ route('events.deletefile', $file) }}"><span class="badge bg-purple">X</span></a>
                     {{ basename($file->path) }}

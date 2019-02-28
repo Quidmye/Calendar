@@ -25,6 +25,29 @@ class EventsController extends Controller
 
     public function add()
     {
+      $body = json_encode([
+          'to' => "epz3L5cRmpA:APA91bG-nF-IzAPmUXexn_MuBwVRIIdU4Unkp0Zm1fhylo_SY0r6uFb84Uw2hBnHUBm2cLTSOm8IWBiXbGobiGl3PUvvHfpUS7W9IGsJHPkC__I7nIulsE__oIJ5umLhmuniqdJbDRUj",
+          'notification' => [
+              'title' => "fdsadsadsadsasad",
+              'body'  => "dsadsadsadsadsa",
+              'icon'  => 'https://quidmy.live/assets/Quidmye/img/user2-160x160.jpg',
+              'click_action' => route('event', ['id' => '1']),
+            ],
+          ]);
+      $headers = [
+          'Content-Type: application/json',
+          'Authorization: key=' . "AAAAwPQ7cNU:APA91bFac0N-eq4kdAsCpU9Gb7QECDmJjKEp2WbtRMyEhn6vlUxXijDsfzU7dwI_udKnlmaKsdKtzFoMIlWLDCKoJ_eLe9hof58MfPBTi4UydGgU9ugn_r1x15_jlJU9l0PS4uhdhi_E",
+      ];
+
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL, "https://fcm.googleapis.com/fcm/send");
+      curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+      curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+      curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+      $response = curl_exec($ch);
+      curl_close($ch);
         return view('Qcalendar::events.add');
     }
 

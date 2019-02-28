@@ -25,7 +25,7 @@
               @if($event->files()->where(['type' => 'audio'])->get())
                 <b>Аудио:</b><br />
                 @foreach ($event->files()->where(['type' => 'audio'])->get() as $audio)
-                  <audio src="{{ \Storage::url($audio->path) }}"></audio><br/>
+                  <audio src="{{ \Storage::url($audio->path) }}"  controls></audio><br/>
                   @endforeach
               @endif
 

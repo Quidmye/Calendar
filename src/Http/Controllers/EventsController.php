@@ -44,7 +44,7 @@ class EventsController extends Controller
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fcmNotification));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
     $result = curl_exec($ch);
     curl_close($ch);
 

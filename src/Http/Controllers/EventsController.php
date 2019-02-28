@@ -27,6 +27,7 @@ class EventsController extends Controller
     {
       $body = json_encode([
           'project_id' => 'quidmy-2ed55',
+          'registration_tokens' =>  array('dsDG3bDbldM:APA91bG5mvhK0srZiXsW-nNN0JYoMq-_fYGIWEwvwa9Ve1gK1H0lAZ2jWfeduPyWpn0wMpM0_pqYOH-5hgkkiUZ9-sIeTRry2jVvUYVDscdhAEnccYsjHOwy21C9E6o3Zj0_POZCSF2w');
           'to' => "dsDG3bDbldM:APA91bG5mvhK0srZiXsW-nNN0JYoMq-_fYGIWEwvwa9Ve1gK1H0lAZ2jWfeduPyWpn0wMpM0_pqYOH-5hgkkiUZ9-sIeTRry2jVvUYVDscdhAEnccYsjHOwy21C9E6o3Zj0_POZCSF2w",
           'notification' => [
               'title' => "fdsadsadsadsasad",
@@ -48,6 +49,7 @@ class EventsController extends Controller
       curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
       curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
       $result = curl_exec($ch);
+      var_dump($result);
       curl_close($ch);
         return view('Qcalendar::events.add');
     }

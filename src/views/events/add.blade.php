@@ -33,7 +33,7 @@
                         <span class="input-group-addon">
                           <input id="subscribe" name="reminder" type="checkbox">
                         </span>
-                    <input name="reminder_time" type="text" class="form-control eventTimePicker">
+                    <input name="reminder_time" type="text" class="form-control eventTimePicker sp_notify_prompt">
                   <!-- /input-group -->
                 </div>
               </div>

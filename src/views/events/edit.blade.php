@@ -31,7 +31,7 @@
                   <label for="reminder_time">Напоминание</label>
                   <div class="input-group">
                         <span class="input-group-addon">
-                          <input id="subscribe" @if($event->reminder_at) checked="checked" @endif name="reminder" type="checkbox">
+                          <input class="sp_notify_prompt" id="subscribe" @if($event->reminder_at) checked="checked" @endif name="reminder" type="checkbox">
                         </span>
                     <input @if($event->reminder_at) value="{{ $event->reminder_at->format('d.m.Y H:i') }}" @endif name="reminder_time" type="text" class="form-control eventTimePicker">
                   <!-- /input-group -->

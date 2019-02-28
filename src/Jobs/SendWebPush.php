@@ -17,8 +17,8 @@ class SendWebPush implements ShouldQueue
 
     protected $event;
 
-    private = $api_key = 'AAAAwPQ7cNU:APA91bFac0N-eq4kdAsCpU9Gb7QECDmJjKEp2WbtRMyEhn6vlUxXijDsfzU7dwI_udKnlmaKsdKtzFoMIlWLDCKoJ_eLe9hof58MfPBTi4UydGgU9ugn_r1x15_jlJU9l0PS4uhdhi_E';
-    private = $url = 'https://fcm.googleapis.com/fcm/send';
+    private $api_key = 'AAAAwPQ7cNU:APA91bFac0N-eq4kdAsCpU9Gb7QECDmJjKEp2WbtRMyEhn6vlUxXijDsfzU7dwI_udKnlmaKsdKtzFoMIlWLDCKoJ_eLe9hof58MfPBTi4UydGgU9ugn_r1x15_jlJU9l0PS4uhdhi_E';
+    private $url = 'https://fcm.googleapis.com/fcm/send';
 
     public function __construct(Event $event)
     {

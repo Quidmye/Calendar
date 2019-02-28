@@ -138,7 +138,7 @@
       },
       success: function(doc) {
         var events = [];
-        $.each(doc, function(varevent){
+        $.each(doc, function(varevent)){
           events.push({
             title: varevent.title,
             start: new Date(varevent.start) // will be parsed

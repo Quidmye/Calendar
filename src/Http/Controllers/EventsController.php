@@ -146,8 +146,17 @@ class EventsController extends Controller
 
     public function list(Request $request){
 
-      $list = Event::where('user_id', \Auth::user()->id)->get();
+      $where[] = ['user_id', '=', \Auth::user()->id];
 
+
+      if($request->get('start')){
+        $where[] = ['start_at', '>=', $request->get('start')]
+      }
+
+      if($request->get('end')){
+        $where[] = ['end_at', '<=', $request->get('end')]
+      }
+      $list = Event::where($where)->get();
       $response = [];
       if($request->ajax())
       {
@@ -156,7 +165,8 @@ class EventsController extends Controller
             'title' => $event->name,
             'start' => $event->start_at->format('c'),
             'end'   => $event->end_at->format('c'),
-            'color' => '#f56954'
+            'color' => '#f56954',
+            'url'   => route('event', $event)
           ];
         }
         return $response;

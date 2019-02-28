@@ -784,7 +784,7 @@
               data = $.map(xhr.responseJSON.errors, function(el) { return el });
               element = document.createElement('div');
               $(element).addClass('callout callout-danger');
-               formELement.prepend(element.prepend(data.join('<br />')));
+               formELement.prepend($(element).prepend(data.join('<br />')));
             }
         });
 

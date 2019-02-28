@@ -143,6 +143,14 @@ class EventsController extends Controller
       return "dsadsadsasad";
     }
 
+    public function list(){
+
+      $list = Event::where('user_id', \Auth::user()->id)->get();
+
+      return view('Qcalendar::events.list'), ['events' => $list];
+
+    }
+
     private function uploadFile($data, $event){
       foreach ($data as $file) {
         $path = $file->store('public/events');

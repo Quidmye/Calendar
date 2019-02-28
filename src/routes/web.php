@@ -20,3 +20,7 @@ Route::prefix('event')->namespace('Quidmye\Http\Controllers')->group(function ()
     Route::get('delete/{id}', 'EventsController@delete')->name('events.delete');
     Route::get('deletefile/{id}', 'EventsController@delete_file')->name('events.deletefile');
 });
+
+Route::prefix('events')->namespace('Quidmye\Http\Controllers')->group(function () {
+    Route::get('/', 'EventsController@list')->name('events.list');
+});

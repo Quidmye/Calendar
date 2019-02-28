@@ -28,7 +28,24 @@ class EventsController extends Controller
     public function show($id){
       $event = Event::findOrFail($id);
 
+      if($event->user_id !== \Auth::user()->id){
+        abort(404);
+      }
+
       return view('Qcalendar::events.show', ['event' => $event]);
+    }
+
+    public function delete($id){
+      $event = Event::findOrFail($id);
+
+      if($event->user_id !== \Auth::user()->id){
+        abort(404);
+      }
+
+      $event->delete();
+
+      return redirect('/');
+
     }
 
     public function add_post(EventAddRequest $request)

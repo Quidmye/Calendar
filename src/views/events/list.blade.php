@@ -128,13 +128,7 @@
     },
     //Random default events
     events: {
-            url: '{{ route('events.list') }}',
-            error: function() {
-                $('#script-warning').show();
-            },
-            success: function(){
-                alert("successful: You can now do your stuff here. You dont need ajax. Full Calendar will do the ajax call OK? ");
-            }
+            url: '{{ route('events.list') }}'
         },
     editable  : true,
     droppable : true, // this allows things to be dropped onto the calendar !!!

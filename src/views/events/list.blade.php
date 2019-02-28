@@ -138,10 +138,10 @@
       },
       success: function(doc) {
         var events = [];
-        $.each(doc, function(var){
+        $.each(doc, function(varevent){
           events.push({
-            title: var.title,
-            start: new Date(var.start) // will be parsed
+            title: varevent.title,
+            start: new Date(varevent.start) // will be parsed
           });
         })
         });

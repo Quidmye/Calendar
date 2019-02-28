@@ -146,7 +146,7 @@
       copiedEventObject.backgroundColor = $(this).css('background-color')
       copiedEventObject.borderColor     = $(this).css('border-color')
       $.ajax({
-        url: {{ route('events.add.ajax') }},
+        url: '{{ route('events.add.ajax') }}',
         type: "POST",
         data: {
           color: copiedEventObject.borderColor,

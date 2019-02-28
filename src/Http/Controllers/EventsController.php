@@ -26,7 +26,7 @@ class EventsController extends Controller
     }
 
     public function show($id){
-      $event = Event:findOrFail($id);
+      $event = Event::findOrFail($id);
 
       return view('Quidmye::events.show');
     }

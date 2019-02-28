@@ -781,7 +781,7 @@
         $(this).ajaxSubmit({  // pre-submit callback
             success:       showResponse,  // post-submit callback
             error:         function(xhr, textStatus, errorThrown)  {
-              data = JSON.parse((xhr.responseText);
+              data = JSON.parse(xhr.responseText);
               formELement.prepend("<div class=\"callout callout-danger\">" + data.join("<br />") + "</div>");
             }
         });

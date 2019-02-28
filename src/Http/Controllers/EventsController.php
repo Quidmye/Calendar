@@ -45,7 +45,7 @@ class EventsController extends Controller
         $event = Event::create($data);
 
         if($request->has('event_files')){
-          $this->uploadFile($request->event_files);
+          $this->uploadFile($request->event_files, $event);
         }
 
         if($request->ajax()){
@@ -57,7 +57,7 @@ class EventsController extends Controller
         }
     }
 
-    private function uploadFile($data){
+    private function uploadFile($data, $event){
       $dir = public_path('storage/' . date('Y/m/d'));
       if(!is_dir($dir)){
         mkdir($dir ,0777, true);

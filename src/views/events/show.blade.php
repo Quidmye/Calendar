@@ -16,10 +16,10 @@
               @endif
 
               @if($event->files()->where(['type' => 'image']))
-              <b>Изображения:</b><br />
-              @foreach ($event->files()->where(['type' => 'image']) as $image)
+                <b>Изображения:</b><br />
+                @foreach ($event->files()->where(['type' => 'image'])->get() as $image)
                   <img class="img-responsive" src="{{ $image->path }}" alt="Photo">
-              @endforeach
+                  @endforeach
               @endif
 
             </div>

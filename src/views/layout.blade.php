@@ -781,7 +781,7 @@
     // if the ajaxSubmit method was passed an Options Object with the dataType
     // property set to 'json' then the first argument to the success callback
     // is the json data object returned by the server
-
+      console.log(textStatus);
     }
     var options = {  // pre-submit callback
         success:       showResponse,  // post-submit callback

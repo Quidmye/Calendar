@@ -49,7 +49,7 @@ class EventsController extends Controller
           if(!is_dir($dir)){
             mkdir($dir ,0777, true);
           }
-          dd($request->event_files);
+          var_dump($request->event_files);
           foreach ($request->event_files as $file) {
             $path = $dir . $file->getClientOriginalName() . '.' . $file->getClientOriginalExtension();
             if(file_exists($path)){

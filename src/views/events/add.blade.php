@@ -43,7 +43,7 @@
                 </div>
                 <div class="form-group">
                   <label for="EventFiles">Дополнительные файлы (изображения, аудио)</label>
-                  <input name="event_files" multiple="multiple" type="file" id="EventFiles">
+                  <input name="event_files[]" multiple="multiple" type="file" id="EventFiles">
                 </div>
               </div>
               <!-- /.box-body -->

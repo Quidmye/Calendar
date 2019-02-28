@@ -8,7 +8,11 @@ class Token extends Model
 {
     protected $table = 'users_push_tokens';
 
+    public $timestamps = false;
+
     protected $fillable = [
         'token', 'user_id'
     ];
+
+
 }

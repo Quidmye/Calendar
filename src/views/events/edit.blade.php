@@ -62,6 +62,7 @@
 
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a class="btn btn-warning btn-sm btn-flat pull-right" href="{{ route('event', $event) }}">Отмена</a>
               </div>
             </form>
           </div>

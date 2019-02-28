@@ -28,7 +28,7 @@ class EventsController extends Controller
     public function show($id){
       $event = Event::findOrFail($id);
 
-      return view('Quidmye::events.show');
+      return view('Qcalendar::events.show');
     }
 
     public function add_post(EventAddRequest $request)

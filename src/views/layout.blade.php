@@ -798,6 +798,15 @@
         // always return false to prevent standard browser submit and page navigation
         return false;
     });
+
+    $('.delete_event_file').on('click', function () {
+        var item = $(this);
+        $.ajax({
+            url: item.attr('href')
+        }).done(function(){
+          item.parent().parent().remove();
+        });
+    });
     /* initialize the external events
      -----------------------------------------------------------------*/
     function init_events(ele) {

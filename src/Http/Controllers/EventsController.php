@@ -57,7 +57,7 @@ class EventsController extends Controller
         }
     }
 
-    private uploadFile($data){
+    private function uploadFile($data){
       $dir = public_path('storage/' . date('Y/m/d'));
       if(!is_dir($dir)){
         mkdir($dir ,0777, true);

@@ -79,7 +79,13 @@
 </section>
 @endsection
 @section('script')
-
+$.ajax({
+  url: "{{ route('events.list') }}",
+}).done(function( data ) {
+    if ( console && console.log ) {
+      console.log(data);
+    }
+  });
   /* initialize the external events
    -----------------------------------------------------------------*/
   function init_events(ele) {

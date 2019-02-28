@@ -3,6 +3,7 @@
 namespace Quidmye\Http\Controllers;
 
 use Illuminate\Routing\Controller;
+use Illuminate\Http\Request;
 use Quidmye\Http\Requests\EventAddRequest;
 use Quidmye\Http\Requests\EventEditRequest;
 use Quidmye\Models\Event;
@@ -143,10 +144,23 @@ class EventsController extends Controller
       return "dsadsadsasad";
     }
 
-    public function list(){
+    public function list(Request $request){
 
       $list = Event::where('user_id', \Auth::user()->id)->get();
 
+      $response = [];
+      if($request->ajax())
+      {
+        foreach ($list as $event) {
+          $response[] = [
+            'title' => $event->name,
+            'start' => $event->start_at->format('c'),
+            'end'   => $event->end_at->format('c'),
+            'color' => '#f56954'
+          ];
+        }
+        return $response;
+      }
       return view('Qcalendar::events.list', ['events' => $list]);
 
     }

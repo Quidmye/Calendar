@@ -9,6 +9,8 @@ class EventFiles extends Model
 {
     protected $table = 'events_files';
 
+    public $timestamps = false;
+
     protected $fillable = [
         'path', 'event_id', 'type'
     ];

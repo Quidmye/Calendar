@@ -15,7 +15,7 @@ class EventFiles extends Model
 
     public function event()
     {
-        return $this->belongsTo('Quidmye\Event');
+        return $this->belongsTo('Quidmye\Models\Event');
     }
 
 }

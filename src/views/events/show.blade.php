@@ -7,7 +7,7 @@
           <div class="box box-primary">
             <div class="box-header">
               <div class="col-md-9"><h3 class="box-title"><strong>{{ $event->name }}</strong></h3>  {{ $event->start_at }} @if($event->start_at != $event->end_at) - {{ $event->end_at }} @endif</div>
-              <div class="col-md-3"><a href='btn btn-warning btn-sm'>Изменить</a> <a href='btn btn-danger btn-іь'>Удалить</a></div>
+              <div class="col-md-3 pull-right"><a class='btn btn-warning btn-sm' href="/">Изменить</a> <a href="/" class='btn btn-danger btn-sm'>Удалить</a></div>
             </div>
             <div class="box-body pad table-responsive">
               @if($event->description)

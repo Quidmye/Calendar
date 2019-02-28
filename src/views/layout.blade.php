@@ -264,7 +264,7 @@
           @else
 
           <li class="user-menu">
-            <a href="{{ route('event.add')}}">Новое событие</a>
+            <a href="{{ route('events.add')}}">Новое событие</a>
           </li>
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

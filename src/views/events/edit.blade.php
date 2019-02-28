@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group">
                   <label for="end_time">Время конца мероприятия</label>
-                  <input value="{{ $event->end_at->format('d.m.Y H:i') }}" type="text" class="form-control eventTimePicker" id="end_time" placeholder="Время конца мероприятия">
+                  <input value="{{ $event->end_at->format('d.m.Y H:i') }}" name="end_time" type="text" class="form-control eventTimePicker" id="end_time" placeholder="Время конца мероприятия">
                 </div>
                 <div class="form-group">
                   <label for="reminder_time">Напоминание</label>

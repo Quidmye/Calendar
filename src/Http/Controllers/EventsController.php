@@ -63,11 +63,7 @@ class EventsController extends Controller
         mkdir($dir ,0777, true);
       }
       foreach ($data as $file) {
-        $path = $dir . '/' . $file->getClientOriginalName();
-        if(file_exists($path)){
-          $path = $dir . microtime() . '.' . $file->getClientOriginalExtension();
-        }
-        $file->store($path);
+        $file->store($dir);
         if(in_array($file->getMimeType(), ['image/gif', 'image/jpeg', 'image/pjpeg', 'image/png'])){
           $type = 'image';
         }else{

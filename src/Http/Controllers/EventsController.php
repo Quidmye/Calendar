@@ -50,7 +50,7 @@ class EventsController extends Controller
 
         if($request->ajax()){
           return [
-            'redirect'  =>  route('event', $event)
+            //'redirect'  =>  route('event', $event)
           ];
         }else{
           redirect(route('event', $event));

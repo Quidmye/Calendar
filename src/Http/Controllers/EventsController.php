@@ -67,7 +67,9 @@ class EventsController extends Controller
         if(file_exists($path)){
           $path = $dir . microtime() . '.' . $file->getClientOriginalExtension();
         }
-        $file->move($path);
+        if(!$file->move($path)){
+          die($path);
+        }
         if(in_array($file->getMimeType(), ['image/gif', 'image/jpeg', 'image/pjpeg', 'image/png'])){
           $type = 'image';
         }else{

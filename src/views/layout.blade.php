@@ -740,7 +740,6 @@
 <script src="/assets/Quidmye/js/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="/assets/Quidmye/js/fullcalendar/dist/fullcalendar.min.js"></script>
 <script type="text/javascript" src="//www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
-<script type="text/javascript" src="/firebase_subscribe.js"></script>
 <!-- Page specific script -->
 <script>
   $(function () {

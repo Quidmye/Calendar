@@ -140,7 +140,27 @@
       day  : 'День'
     },
     //Random default events
-    events    : loadEvents,
+    events: function(start, end, timezone, callback) {
+    $.ajax({
+      url: '{{ route('events.list') }}',
+      dataType: 'json',
+      data: {
+        // our hypothetical feed requires UNIX timestamps
+        start: new Date(start),
+        end: new Date(end)
+      },
+      success: function(doc) {
+        var events = [];
+        $(doc).each(function() {
+          events.push({
+            title: $(this).attr('title'),
+            start: $(this).attr('start') // will be parsed
+          });
+        });
+        callback(events);
+      }
+    });
+  },
     editable  : true,
     droppable : true, // this allows things to be dropped onto the calendar !!!
     drop      : function (date, allDay) { // this function is called when something is dropped

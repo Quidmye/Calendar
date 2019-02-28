@@ -29,6 +29,9 @@ class Event extends Model
     }
 
     public function setReminderAtAttribute($value){
+      if(is_null($value)){
+        return null;
+      }
       $this->attributes['reminder_at'] = Carbon::parse($value)->format("Y-m-d H:i:00");
     }
 }

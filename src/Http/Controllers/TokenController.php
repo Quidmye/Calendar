@@ -18,9 +18,9 @@ class TokenController extends Controller
         $this->middleware(['web', 'auth']);
     }
 
-    public function save(){
+    public function save(Request $request){
       $token = Token::create([
-        'token' => Request::get('token'),
+        'token' => $request->get('token'),
         'user_id' => \Auth::user()->id
       ]);
 

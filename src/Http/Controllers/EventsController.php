@@ -45,28 +45,7 @@ class EventsController extends Controller
         $event = Event::create($data);
 
         if($request->has('event_files')){
-          $dir = public_path('storage/' . date('Y/m/d'));
-          if(!is_dir($dir)){
-            mkdir($dir ,0777, true);
-          }
-          var_dump($request->event_files);
-          foreach ($request->event_files as $file) {
-            $path = $dir . $file->getClientOriginalName() . '.' . $file->getClientOriginalExtension();
-            if(file_exists($path)){
-              $path = $dir . microtime() . '.' . $file->getClientOriginalExtension();
-            }
-          $file->move($path) or die('lol 1');
-          if(in_array($file->getMimeType(), ['image/gif', 'image/jpeg', 'image/pjpeg', 'image/png'])){
-            $type = 'image';
-          }else{
-            $type = 'audio';
-          }
-          EventFiles::create([
-              'path' => $path,
-              'type' => $type,
-              'event_id'  => $event->id
-          ]);
-      }
+          $this->uploadFile($request->event_files);
         }
 
         if($request->ajax()){
@@ -76,5 +55,29 @@ class EventsController extends Controller
         }else{
           redirect(route('event', $event));
         }
+    }
+
+    private uploadFile($data){
+      $dir = public_path('storage/' . date('Y/m/d'));
+      if(!is_dir($dir)){
+        mkdir($dir ,0777, true);
+      }
+      foreach ($data as $file) {
+        $path = $dir . $file->getClientOriginalName() . '.' . $file->getClientOriginalExtension();
+        if(file_exists($path)){
+          $path = $dir . microtime() . '.' . $file->getClientOriginalExtension();
+        }
+        $file->move($path);
+        if(in_array($file->getMimeType(), ['image/gif', 'image/jpeg', 'image/pjpeg', 'image/png'])){
+          $type = 'image';
+        }else{
+          $type = 'audio';
+        }
+        EventFiles::create([
+          'path' => $path,
+          'type' => $type,
+          'event_id'  => $event->id
+        ]);
+      }
     }
 }

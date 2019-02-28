@@ -237,5 +237,5 @@ $(function () {
     //Remove event from text input
     $('#new-event').val('')
   })
-})
+
 @endsection

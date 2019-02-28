@@ -780,7 +780,7 @@
         $(this).ajaxSubmit({  // pre-submit callback
             success:       showResponse,  // post-submit callback
             error:         function(xhr, textStatus, errorThrown)  {
-              $(this).slideToggle(1000);
+              console.log($(this));
             }
         });
 

@@ -16,12 +16,7 @@ class CreateEventsFilesTable extends Migration
         Schema::create('events_files', function (Blueprint $table) {
             $table->increments('id');
             $table->string('path');
-            $table->unsignedInteger('user_id');
-
-            $table->foreign('user_id')->references('id')->on('users')
-              ->onDelete('cascade');
             $table->unsignedInteger('event_id');
-
             $table->foreign('event_id')->references('id')->on('events')
               ->onDelete('cascade');
             $table->timestamps();

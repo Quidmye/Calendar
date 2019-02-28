@@ -42,15 +42,8 @@
                   <textarea name="description" class="form-control" id="description" rows="3" placeholder="Описание мероприятия"></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <input type="file" id="exampleInputFile">
-
-                  <p class="help-block">Example block-level help text here.</p>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Check me out
-                  </label>
+                  <label for="EventFiles">Дополнительные файлы</label>
+                  <input name="event_files" multiple="multiple" type="file" id="EventFiles">
                 </div>
               </div>
               <!-- /.box-body -->

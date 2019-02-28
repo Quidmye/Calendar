@@ -12,7 +12,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form class="ajaxForm" enctype="multipart/form-data" role="form" action="{{ route('events.add.post') }}" method="post">
+            <form class="ajaxForm" enctype="multipart/form-data" role="form" action="{{ route('events.edit.post', $event) }}" method="post">
               {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">

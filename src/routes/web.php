@@ -16,6 +16,7 @@ Route::prefix('event')->namespace('Quidmye\Http\Controllers')->group(function ()
     Route::post('new', 'EventsController@add_post')->name('events.add.post');
     Route::get('{id}', 'EventsController@show')->name('event');
     Route::get('edit/{id}', 'EventsController@edit')->name('events.edit');
+    Route::post('edit/{id}', 'EventsController@edit_post')->name('events.edit.post');
     Route::get('delete/{id}', 'EventsController@delete')->name('events.delete');
     Route::get('deletefile/{id}', 'EventsController@delete_file')->name('events.deletefile');
 });

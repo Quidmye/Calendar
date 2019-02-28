@@ -145,7 +145,15 @@
       copiedEventObject.allDay          = allDay
       copiedEventObject.backgroundColor = $(this).css('background-color')
       copiedEventObject.borderColor     = $(this).css('border-color')
-
+      $.ajax({
+        url: {{ route('events.add.ajax') }},
+        type: "POST",
+        data: {
+          color: copiedEventObject.borderColor,
+          name: originalEventObject.title,
+          time: copiedEventObject.start.format(),
+        }
+      });
       // render the event on the calendar
       // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
       $('#calendar').fullCalendar('renderEvent', copiedEventObject, true)

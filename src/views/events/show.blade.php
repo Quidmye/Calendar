@@ -9,9 +9,9 @@
               <h3 class="box-title">{{ $event->name }}</h3>
             </div>
             <div class="box-body pad table-responsive">
-              @if($event->description){
+              @if($event->description)
                 <p>{{ $event->description }}</p>
-              }
+              @endif
 
             </div>
             <!-- /.box -->

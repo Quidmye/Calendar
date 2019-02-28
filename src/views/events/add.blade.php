@@ -42,7 +42,7 @@
                   <textarea name="description" class="form-control" id="description" rows="3" placeholder="Описание мероприятия"></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="EventFiles">Дополнительные файлы</label>
+                  <label for="EventFiles">Дополнительные файлы (изображения, аудио)</label>
                   <input name="event_files" multiple="multiple" type="file" id="EventFiles">
                 </div>
               </div>

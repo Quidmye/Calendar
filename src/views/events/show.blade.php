@@ -16,8 +16,10 @@
               @endif
 
               @if($event->has('files'))
-              <b>Описание:</b><br />
-                <p>{{ $event->description }}</p>
+              <b>Изображения:</b><br />
+              @foreach ($event->files()->where(['type' => 'image']) as $image)
+                  <img class="img-responsive" src="{{ $image->path }}" alt="Photo">
+              @endforeach
               @endif
 
             </div>

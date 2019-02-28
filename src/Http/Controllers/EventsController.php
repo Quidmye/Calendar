@@ -26,7 +26,6 @@ class EventsController extends Controller
     public function add()
     {
 
-      foreach ($tokens as $token) {
         $body = json_encode([
             'to' => "dK8o8wUECrY:APA91bEFFoWdaNQmcskdyAd7ZxtY90pHoqU_I1yBOStT-rqMiJ7ljnglNl4rtfXw6irXrDCjGr6QrU94MIoPjepR4K6yeT8nSeOokrVhi_DdgrxXVqXkNZ8xghPcqYN1ppk1k_ivhNqd",
             'project_id' => 'quidmy-2ed55',

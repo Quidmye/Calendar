@@ -254,11 +254,14 @@
               </li>
             </ul>
           </li>
-          <!-- User Account: style can be found in dropdown.less -->
+          @guest
+          <li class="user-menu"><a href="{{ route('login') }}">Войти</a></li>
+          <li class="user-menu"><a href="{{ route('register') }}">Регистрация</a></li>
+          @else
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="/assets/Quidmye/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">{{ \Auth::user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -288,14 +291,15 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="{{ route('events.list') }}" class="btn btn-default btn-flat">События</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="{{ route('logout') }}" class="btn btn-default btn-flat">Выход</a>
                 </div>
               </li>
             </ul>
           </li>
+          @endguest
         </ul>
       </div>
     </nav>

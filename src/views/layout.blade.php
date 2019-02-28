@@ -255,10 +255,17 @@
               </li>
             </ul>
           </li>
+          <li class="user-menu">
+            <a href="https://github.com/Quidmye/Calenda">GitHub</a>
+          </li>
           @guest
           <li class="user-menu"><a href="{{ route('login') }}">Войти</a></li>
           <li class="user-menu"><a href="{{ route('register') }}">Регистрация</a></li>
           @else
+
+          <li class="user-menu">
+            <a href="{{ route('event.add')}}">Новое событие</a>
+          </li>
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="/assets/Quidmye/img/user2-160x160.jpg" class="user-image" alt="User Image">

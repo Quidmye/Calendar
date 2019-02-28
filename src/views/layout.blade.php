@@ -771,36 +771,18 @@
 
     }
     function showError(xhr, textStatus, errorThrown)  {
-    // for normal html responses, the first argument to the success callback
-    // is the XMLHttpRequest object's responseText property
-
-    // if the ajaxSubmit method was passed an Options Object with the dataType
-    // property set to 'xml' then the first argument to the success callback
-    // is the XMLHttpRequest object's responseXML property
-
-    // if the ajaxSubmit method was passed an Options Object with the dataType
-    // property set to 'json' then the first argument to the success callback
-    // is the json data object returned by the server
       console.log(xhr);
     }
-    var options = {  // pre-submit callback
-        success:       showResponse,  // post-submit callback
-        error:         showError
 
-        // other available options:
-        //url:       url         // override for form's 'action' attribute
-        //type:      type        // 'get' or 'post', override for form's 'method' attribute
-        //dataType:  null        // 'xml', 'script', or 'json' (expected server response type)
-        //clearForm: true        // clear all form fields after successful submit
-        //resetForm: true        // reset the form after successful submit
-
-        // $.ajax options can be used here too, for example:
-        //timeout:   3000
-    };
     $('.ajaxForm').submit(function() {
         // inside event callbacks 'this' is the DOM element so we first
         // wrap it in a jQuery object and then invoke ajaxSubmit
-        $(this).ajaxSubmit(options);
+        $(this).ajaxSubmit({  // pre-submit callback
+            success:       showResponse,  // post-submit callback
+            error:         function(xhr, textStatus, errorThrown)  {
+              this.parent().prepend("<p>Test</p>")
+            }
+        });
 
         // !!! Important !!!
         // always return false to prevent standard browser submit and page navigation

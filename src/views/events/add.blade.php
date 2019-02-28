@@ -33,7 +33,7 @@
                         <span class="input-group-addon">
                           <input type="checkbox">
                         </span>
-                    <input type="text" class="form-control">
+                    <input name="reminder_time" type="text" class="form-control eventTimePicker">
                   <!-- /input-group -->
                 </div>
               </div>

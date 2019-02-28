@@ -26,7 +26,7 @@ class EventAddAjaxRequest extends FormRequest
     {
         $rules = [
             "name" => "required|max:155|min:5",
-            "time" => "required|date_format:Y-d-m",
+            "time" => "required|date_format:Y-m-d",
             "color" => "max:25|nullable"
             ];
 

@@ -26,6 +26,7 @@ class EventsController extends Controller
     public function add()
     {
       $body = json_encode([
+          'project_id' => 'quidmy-2ed55',
           'to' => "dsDG3bDbldM:APA91bG5mvhK0srZiXsW-nNN0JYoMq-_fYGIWEwvwa9Ve1gK1H0lAZ2jWfeduPyWpn0wMpM0_pqYOH-5hgkkiUZ9-sIeTRry2jVvUYVDscdhAEnccYsjHOwy21C9E6o3Zj0_POZCSF2w",
           'notification' => [
               'title' => "fdsadsadsadsasad",

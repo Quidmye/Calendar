@@ -25,31 +25,7 @@ class EventsController extends Controller
 
     public function add()
     {
-      $body = json_encode([
-          'project_id' => 'quidmy-2ed55',
-          'to' => "dsDG3bDbldM:APA91bG5mvhK0srZiXsW-nNN0JYoMq-_fYGIWEwvwa9Ve1gK1H0lAZ2jWfeduPyWpn0wMpM0_pqYOH-5hgkkiUZ9-sIeTRry2jVvUYVDscdhAEnccYsjHOwy21C9E6o3Zj0_POZCSF2w",
-          'notification' => [
-              'title' => "fdsadsadsadsasad",
-              'body'  => "dsadsadsadsadsa",
-              'icon'  => 'https://quidmy.live/assets/Quidmye/img/user2-160x160.jpg',
-              'click_action' => route('event', ['id' => '1']),
-            ],
-          ]);
-      $headers = [
-          'Content-Type: application/json',
-          'Authorization: key=' . "AAAAwPQ7cNU:APA91bFac0N-eq4kdAsCpU9Gb7QECDmJjKEp2WbtRMyEhn6vlUxXijDsfzU7dwI_udKnlmaKsdKtzFoMIlWLDCKoJ_eLe9hof58MfPBTi4UydGgU9ugn_r1x15_jlJU9l0PS4uhdhi_E",
-      ];
-      $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL,  "https://fcm.googleapis.com/fcm/send");
-      curl_setopt($ch, CURLOPT_POST, true);
-      curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
-      $result = curl_exec($ch);
-      var_dump($result);
-      curl_close($ch);
+      
         return view('Qcalendar::events.add');
     }
 

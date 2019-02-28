@@ -19,6 +19,7 @@ class SendWebPush implements ShouldQueue
 
     private $api_key = 'AAAAwPQ7cNU:APA91bFac0N-eq4kdAsCpU9Gb7QECDmJjKEp2WbtRMyEhn6vlUxXijDsfzU7dwI_udKnlmaKsdKtzFoMIlWLDCKoJ_eLe9hof58MfPBTi4UydGgU9ugn_r1x15_jlJU9l0PS4uhdhi_E';
     private $url = 'https://fcm.googleapis.com/fcm/send';
+    private $project_id = "quidmy-2ed55";
 
     public function __construct()
     {
@@ -34,6 +35,7 @@ class SendWebPush implements ShouldQueue
                   foreach ($tokens as $token) {
                     $body = json_encode([
                         'to' => $token->token,
+                        'project_id' => $this->project_id,
                         'notification' => [
                             'title' => $event->name,
                             'body'  => $event->description,

@@ -140,7 +140,7 @@
     },
     //Random default events
     events    : function(){
-      console.log(loadEvents);
+      console.log(loadEvents());
       return loadEvents;
     },
     editable  : true,

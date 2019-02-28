@@ -776,6 +776,7 @@
 
     $('.ajaxForm').submit(function() {
       var formELement = this;
+      $(this).find('.callout').remove();
         // inside event callbacks 'this' is the DOM element so we first
         // wrap it in a jQuery object and then invoke ajaxSubmit
         $(this).ajaxSubmit({  // pre-submit callback

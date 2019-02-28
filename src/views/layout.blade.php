@@ -785,8 +785,6 @@
               element = document.createElement('div');
               $(element).addClass('callout callout-danger');
               element.prepend(data.join('<br />'));
-              console.log($(element));
-              console.log(data.join('<br />'));
                formELement.prepend(element);
             }
         });

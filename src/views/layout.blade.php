@@ -739,14 +739,21 @@
 <script src="/assets/Quidmye/js/moment/moment.js"></script>
 <script src="/assets/Quidmye/js/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="/assets/Quidmye/js/fullcalendar/dist/fullcalendar.min.js"></script>
-<script type="text/javascript" src="//www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
 <!-- Page specific script -->
 <script>
   $(function () {
     // firebase_subscribe.js
-firebase.initializeApp({
-    messagingSenderId: '828731257045'
-});
+    // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDfB_prNUE_T7cvkdkhE-IUZBEfAWTb_7U",
+        authDomain: "quidmy-2ed55.firebaseapp.com",
+        databaseURL: "https://quidmy-2ed55.firebaseio.com",
+        projectId: "quidmy-2ed55",
+        storageBucket: "quidmy-2ed55.appspot.com",
+        messagingSenderId: "828731257045"
+      };
+      firebase.initializeApp(config);
 
 // браузер поддерживает уведомления
 // вообще, эту проверку должна делать библиотека Firebase, но она этого не делает

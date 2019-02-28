@@ -147,7 +147,7 @@ class EventsController extends Controller
 
       $list = Event::where('user_id', \Auth::user()->id)->get();
 
-      return view('Qcalendar::events.list'), ['events' => $list];
+      return view('Qcalendar::events.list'), ['events' => $list]);
 
     }
 

@@ -783,7 +783,7 @@
             error:         function(xhr, textStatus, errorThrown)  {
               data = $.map(xhr.responseJSON.errors, function(el) { return el });
               element = document.createElement('div');
-              element.addClass('callout callout-danger');
+              $(element).addClass('callout callout-danger');
                formELement.element.prepend(data.join('<br />'));
             }
         });

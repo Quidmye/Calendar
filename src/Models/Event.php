@@ -39,4 +39,19 @@ class Event extends Model
       }
       $this->attributes['reminder_at'] = Carbon::parse($value)->format("Y-m-d H:i:00");
     }
+
+    public function getStartAtAttribute($value){
+      return Carbon::parse($value);
+    }
+
+    public function getEndAtAttribute($value){
+      return Carbon::parse($value);
+    }
+
+    public function getReminderAtAttribute($value){
+      if($value){
+        return Carbon::parse($value);
+      }
+      return null;
+    }
 }

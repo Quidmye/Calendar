@@ -17,15 +17,15 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="event_name">Название мероприятия</label>
-                  <input id="event_name" name="name" type="text" class="form-control" placeholder="Название мероприятия">
+                  <input value="{{ $event->name }}" id="event_name" name="name" type="text" class="form-control" placeholder="Название мероприятия">
                 </div>
                 <div class="form-group">
                   <label for="start_time">Время начала мероприятия</label>
-                  <input name="start_time" type="text" class="form-control eventTimePicker" id="start_time" placeholder="Время начала мероприятия">
+                  <input value="{{ $event->star_at->format('d.m.Y H:i') }}" name="start_time" type="text" class="form-control eventTimePicker" id="start_time" placeholder="Время начала мероприятия">
                 </div>
                 <div class="form-group">
                   <label for="end_time">Время конца мероприятия</label>
-                  <input name="end_time" type="text" class="form-control eventTimePicker" id="end_time" placeholder="Время конца мероприятия">
+                  <input value="{{ $event->end_at->format('d.m.Y H:i') }}" type="text" class="form-control eventTimePicker" id="end_time" placeholder="Время конца мероприятия">
                 </div>
                 <div class="form-group">
                   <label for="reminder_time">Напоминание</label>
@@ -33,7 +33,7 @@
                         <span class="input-group-addon">
                           <input name="reminder" type="checkbox">
                         </span>
-                    <input name="reminder_time" type="text" class="form-control eventTimePicker">
+                    <input @if($event->reminder_at) value="{{ $event->reminder_at->format('d.m.Y H:i') }}" @endif name="reminder_time" type="text" class="form-control eventTimePicker">
                   <!-- /input-group -->
                 </div>
               </div>

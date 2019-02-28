@@ -27,7 +27,7 @@ class EventAddAjaxRequest extends FormRequest
         $rules = [
             "name" => "required|max:155|min:5",
             "time" => "required|date_format:Y-d-m",
-            "color" => "size:25|nullable"
+            "color" => "max:25|nullable"
             ];
 
         if($request->has('reminder')){

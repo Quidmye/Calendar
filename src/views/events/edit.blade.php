@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group">
                   <label for="start_time">Время начала мероприятия</label>
-                  <input value="{{ $event->star_at->format('d.m.Y H:i') }}" name="start_time" type="text" class="form-control eventTimePicker" id="start_time" placeholder="Время начала мероприятия">
+                  <input value="{{ $event->start_at->format('d.m.Y H:i') }}" name="start_time" type="text" class="form-control eventTimePicker" id="start_time" placeholder="Время начала мероприятия">
                 </div>
                 <div class="form-group">
                   <label for="end_time">Время конца мероприятия</label>

@@ -106,6 +106,19 @@
 
   init_events($('#external-events div.external-event'))
 
+  function loadEvents(){
+    $.ajax({
+      url: "{{ route('events.list') }}",
+      success: function( data ) {
+        $.each(data, function( index, value ) {
+          data.start = new Date(data.start);
+          data.end = new Date(data.end);
+        });
+        return data;
+        }
+    });
+  }
+
   /* initialize the calendar
    -----------------------------------------------------------------*/
   //Date for the calendar events (dummy data)
@@ -126,18 +139,7 @@
       day  : 'День'
     },
     //Random default events
-    events    : function(){
-      $.ajax({
-        url: "{{ route('events.list') }}",
-        success: function( data ) {
-          $.each(data, function( index, value ) {
-            data.start = new Date(data.start);
-            data.end = new Date(data.end);
-          });
-          return data;
-          }
-      });
-    },
+    events    : loadEvents,
     editable  : true,
     droppable : true, // this allows things to be dropped onto the calendar !!!
     drop      : function (date, allDay) { // this function is called when something is dropped

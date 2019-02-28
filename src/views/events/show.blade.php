@@ -18,7 +18,7 @@
               @if($event->files()->where(['type' => 'image']))
                 <b>Изображения:</b><br />
                 @foreach ($event->files()->where(['type' => 'image'])->get() as $image)
-                  <img class="img-responsive" src="{{ $image->path }}" alt="Photo">
+                  <img class="img-responsive" src="{{ asset($image->path) }}" alt="Photo">
                   @endforeach
               @endif
 

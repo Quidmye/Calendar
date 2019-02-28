@@ -41,10 +41,10 @@
                   <label for="description">Описание мероприятия</label>
                   <textarea name="description" class="form-control" id="description" rows="3" placeholder="Описание мероприятия">{{ $event->description }}</textarea>
                 </div>
-                <div class="form-group">
+                <div class="form-group item">
                   @foreach ($event->files()->get() as $file)
                   <div class="attachment">
-                  <a href="{{ \Storage::url($file->path) }}"<p class="filename">
+                  <a target="_blank" href="{{ \Storage::url($file->path) }}"<p class="filename">
                     {{ basename($file->path) }}
                   </p>
 
@@ -52,7 +52,7 @@
                     <a href="{{ route('events.deletefile', $file) }}" class="btn btn-warning btn-sm btn-flat">Удалить</a>
                   </div>
                 </div>
-                
+
                   @endforeach
                   <label for="EventFiles">Дополнительные файлы (изображения, аудио)</label>
                   <input name="event_files[]" multiple="multiple" type="file" id="EventFiles">

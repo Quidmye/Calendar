@@ -28,6 +28,16 @@
                   <input name="end_time" type="text" class="form-control eventTimePicker" id="end_time" placeholder="Время конца мероприятия">
                 </div>
                 <div class="form-group">
+                  <label for="reminder_time">Напоминание</label>
+                  <div class="input-group">
+                        <span class="input-group-addon">
+                          <input type="checkbox">
+                        </span>
+                    <input type="text" class="form-control">
+                  <!-- /input-group -->
+                </div>
+              </div>
+                <div class="form-group">
                   <label for="description">Описание мероприятия</label>
                   <textarea name="description" class="form-control" id="description" rows="3" placeholder="Описание мероприятия"></textarea>
                 </div>

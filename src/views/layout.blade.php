@@ -806,6 +806,7 @@
         }).done(function(){
           item.parent().parent().remove();
         });
+        return false;
     });
     /* initialize the external events
      -----------------------------------------------------------------*/

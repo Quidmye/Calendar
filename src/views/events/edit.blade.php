@@ -49,7 +49,7 @@
                   </p>
 
                   <div class="pull-right">
-                    <a href="{{ route('events.deletefile', $file) }}" class="btn btn-warning btn-sm btn-flat">Удалить</a>
+                    <a href="{{ route('events.deletefile', $file) }}" class="delete_event_file btn btn-warning btn-sm btn-flat">Удалить</a>
                   </div>
                 </blockquote><br />
 

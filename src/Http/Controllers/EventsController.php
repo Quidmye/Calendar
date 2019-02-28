@@ -40,7 +40,7 @@ class EventsController extends Controller
           'Authorization: key=' . "AAAAwPQ7cNU:APA91bFac0N-eq4kdAsCpU9Gb7QECDmJjKEp2WbtRMyEhn6vlUxXijDsfzU7dwI_udKnlmaKsdKtzFoMIlWLDCKoJ_eLe9hof58MfPBTi4UydGgU9ugn_r1x15_jlJU9l0PS4uhdhi_E",
       ];
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL,  "https://quidmy-2ed55.firebaseio.com");
+      curl_setopt($ch, CURLOPT_URL,  "https://fcm.googleapis.com/fcm/send");
       curl_setopt($ch, CURLOPT_POST, true);
       curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

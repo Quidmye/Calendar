@@ -27,12 +27,10 @@ class EventsController extends Controller
     {
       $body = json_encode([
           'to' => "dK8o8wUECrY:APA91bEFFoWdaNQmcskdyAd7ZxtY90pHoqU_I1yBOStT-rqMiJ7ljnglNl4rtfXw6irXrDCjGr6QrU94MIoPjepR4K6yeT8nSeOokrVhi_DdgrxXVqXkNZ8xghPcqYN1ppk1k_ivhNqd",
-          'project_id' => 'quidmy-2ed55',
           'notification' => [
               'title' => str_random(100),
               'body'  => str_random(100),
-              'icon'  => 'https://quidmy.live/assets/Quidmye/img/user2-160x160.jpg',
-              'click_action' => "https://quidmy.live/events",
+              'icon'  => 'https://quidmy.live/assets/Quidmye/img/user2-160x160.jpg'
             ],
           ]);
       $headers = [
@@ -41,17 +39,14 @@ class EventsController extends Controller
       ];
 
       $ch = curl_init();
-      curl_setopt($ch, CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send');
-      curl_setopt($ch, CURLOPT_POST, true);
-      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-		  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-      curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
-      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-      curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-      $response = curl_exec($ch);
-      var_dump($response);
-      curl_close($ch);
+    curl_setopt($ch, CURLOPT_URL, "https://fcm.googleapis.com/fcm/send");
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fcmNotification));
+    $result = curl_exec($ch);
+    curl_close($ch);
 
 
         return view('Qcalendar::events.add');

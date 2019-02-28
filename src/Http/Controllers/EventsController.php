@@ -99,7 +99,7 @@ class EventsController extends Controller
 
       $file->delete();
 
-      return true;
+      return "dsadsadsasad";
     }
 
     private function uploadFile($data, $event){

@@ -43,10 +43,16 @@
                 </div>
                 <div class="form-group">
                   @foreach ($event->files()->get() as $file)
-                  <a  class="btn btn-app">
-                    <a href="{{ route('events.deletefile', $file) }}"><span class="badge bg-purple">X</span></a>
+                  <div class="attachment">
+                  <a href="{{ \Storage::url($file->path) }}"<p class="filename">
                     {{ basename($file->path) }}
-                  </a>
+                  </p>
+
+                  <div class="pull-right">
+                    <a href="{{ route('events.deletefile', $file) }}" class="btn btn-warning btn-sm btn-flat">Удалить</a>
+                  </div>
+                </div>
+                
                   @endforeach
                   <label for="EventFiles">Дополнительные файлы (изображения, аудио)</label>
                   <input name="event_files[]" multiple="multiple" type="file" id="EventFiles">

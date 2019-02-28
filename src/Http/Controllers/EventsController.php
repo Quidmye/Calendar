@@ -72,7 +72,7 @@ class EventsController extends Controller
           $type = 'audio';
         }
         EventFiles::create([
-          'path' => asset($path),
+          'path' => $path,
           'type' => $type,
           'event_id'  => $event->id
         ]);

@@ -20,6 +20,11 @@ class Event extends Model
         return $this->belongsTo('Quidmye\User');
     }
 
+    public function files()
+    {
+        return $this->hasMany('Quidmye\EventFiles');
+    }
+
     public function setStartAtAttribute($value){
       $this->attributes['start_at'] = Carbon::parse($value)->format("Y-m-d H:i:00");
     }

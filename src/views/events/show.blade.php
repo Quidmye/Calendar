@@ -15,6 +15,11 @@
                 <p>{{ $event->description }}</p>
               @endif
 
+              @if($event->has('files'))
+              <b>Описание:</b><br />
+                <p>{{ $event->description }}</p>
+              @endif
+
             </div>
             <!-- /.box -->
           </div>

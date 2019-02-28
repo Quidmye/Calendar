@@ -31,7 +31,7 @@ class EventsController extends Controller
             'project_id' => 'quidmy-2ed55',
             'notification' => [
                 'title' => str_random(100),
-                'body'  => tr_random(100),
+                'body'  => str_random(100),
                 'icon'  => 'https://quidmy.live/assets/Quidmye/img/user2-160x160.jpg',
                 'click_action' => "https://quidmy.live/events",
               ],

@@ -139,7 +139,10 @@
       day  : 'День'
     },
     //Random default events
-    events    : loadEvents,
+    events    : function(){
+      console.log(loadEvents);
+      return loadEvents;
+    },
     editable  : true,
     droppable : true, // this allows things to be dropped onto the calendar !!!
     drop      : function (date, allDay) { // this function is called when something is dropped

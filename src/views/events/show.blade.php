@@ -15,14 +15,14 @@
                 <p>{{ $event->description }}</p>
               @endif
 
-              @if($event->files()->where(['type' => 'image']))
+              @if($event->files()->where(['type' => 'image'])->get())
                 <b>Изображения:</b><br />
                 @foreach ($event->files()->where(['type' => 'image'])->get() as $image)
                   <img class="img-responsive" src="{{ \Storage::url($image->path) }}" alt="Photo">
                   @endforeach
               @endif
 
-              @if($event->files()->where(['type' => 'audio']))
+              @if($event->files()->where(['type' => 'audio'])->get())
                 <b>Аудио:</b><br />
                 @foreach ($event->files()->where(['type' => 'audio'])->get() as $audio)
                   <audio src="{{ \Storage::url($audio->path) }}"></audio><br/>

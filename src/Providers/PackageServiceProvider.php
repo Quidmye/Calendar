@@ -19,6 +19,7 @@ class PackageServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../views', 'Qcalendar');
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadTranslationsFrom(__DIR__.'/../translations', 'Qcalendar');
+        $this->loadMigrationsFrom(__DIR__.'/../migrations/web.php');
 
         // Тут украденный костыль. loadMigrationsFrom работал через задницу
         if (! class_exists('CreateEventsTable')) {

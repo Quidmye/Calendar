@@ -22,6 +22,15 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/assets/Quidmye/css/_all-skins.css">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "9f1ab67d-067f-4d5a-9491-7368d9d293de",
+    });
+  });
+</script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -746,101 +755,10 @@
 <script src="/assets/Quidmye/js/moment/moment.js"></script>
 <script src="/assets/Quidmye/js/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="/assets/Quidmye/js/fullcalendar/dist/fullcalendar.min.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
-<!-- Page specific script -->
+
 <script>
+
   $(function () {
-    // firebase_subscribe.js
-    // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDfB_prNUE_T7cvkdkhE-IUZBEfAWTb_7U",
-        authDomain: "quidmy-2ed55.firebaseapp.com",
-        databaseURL: "https://quidmy-2ed55.firebaseio.com",
-        projectId: "quidmy-2ed55",
-        storageBucket: "quidmy-2ed55.appspot.com",
-        messagingSenderId: "828731257045"
-      };
-      firebase.initializeApp(config);
-
-// браузер поддерживает уведомления
-// вообще, эту проверку должна делать библиотека Firebase, но она этого не делает
-if ('Notification' in window) {
-    var messaging = firebase.messaging();
-
-    // пользователь уже разрешил получение уведомлений
-    // подписываем на уведомления если ещё не подписали
-    if (Notification.permission === 'granted') {
-        subscribe();
-    }
-
-    // по клику, запрашиваем у пользователя разрешение на уведомления
-    // и подписываем его
-    $('#subscribe').on('click', function () {
-        subscribe();
-    });
-}
-
-function subscribe() {
-    // запрашиваем разрешение на получение уведомлений
-    messaging.requestPermission()
-        .then(function () {
-            // получаем ID устройства
-            messaging.getToken()
-                .then(function (currentToken) {
-                    console.log(currentToken);
-
-                    if (currentToken) {
-                        sendTokenToServer(currentToken);
-                    } else {
-                        console.warn('Не удалось получить токен.');
-                        setTokenSentToServer(false);
-                    }
-                })
-                .catch(function (err) {
-                    console.warn('При получении токена произошла ошибка.', err);
-                    setTokenSentToServer(false);
-                });
-    })
-    .catch(function (err) {
-        console.warn('Не удалось получить разрешение на показ уведомлений.', err);
-    });
-}
-
-// отправка ID на сервер
-function sendTokenToServer(currentToken) {
-    if (!isTokenSentToServer(currentToken)) {
-        console.log('Отправка токена на сервер...');
-
-        var url = '{{ route('token.save') }}'; // адрес скрипта на сервере который сохраняет ID устройства
-        $.ajax({
-          url: url,
-          headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          },
-          type: "POST",
-          data: {
-            token: currentToken
-          }
-        });
-
-        setTokenSentToServer(currentToken);
-    } else {
-        console.log('Токен уже отправлен на сервер.');
-    }
-}
-
-// используем localStorage для отметки того,
-// что пользователь уже подписался на уведомления
-function isTokenSentToServer(currentToken) {
-    return window.localStorage.getItem('sentFirebaseMessagingToken') == currentToken;
-}
-
-function setTokenSentToServer(currentToken) {
-    window.localStorage.setItem(
-        'sentFirebaseMessagingToken',
-        currentToken ? currentToken : ''
-    );
-}
     $('input.eventTimePicker').daterangepicker({
       singleDatePicker: true,
       showDropdowns: true,

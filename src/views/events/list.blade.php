@@ -8,6 +8,15 @@
           <h4 class="box-title">Draggable Events</h4>
         </div>
         <div class="box-body">
+          <div class='onesignal-customlink-container'></div>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <div class="box box-solid">
+        <div class="box-header with-border">
+          <h4 class="box-title">Draggable Events</h4>
+        </div>
+        <div class="box-body">
           <!-- the events -->
           <div id="external-events">
             <div class="external-event bg-green">Lunch</div>

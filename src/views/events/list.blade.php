@@ -101,7 +101,24 @@
 @endsection
 @section('script')
 $('input[name=search-query]').on('change', function(){
+  $('#search-results').empty();
+  if($(this).val().length >= 3){
+    setTimeout(function(){
+      $.ajax({
+        url: '{{ route('events.list') }}',
+        type: "GET",
+        data: {
+          query: $(this).val()
+        }
+      }).done(function(data){
+        $.each(data, function(event) {
+          ellem = $('<a class="btn btn-default btn-block" href="' + data.url' + "><strong>' + data.start + '</strong> - ' + data.title + '</a>');
+          $('#search-results').append(ellem);
+        });
 
+      });
+    }, 2000);
+  }
 });
   /* initialize the external events
    -----------------------------------------------------------------*/

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications;
+namespace Quidmye\Notifications;
 
 use Illuminate\Notifications\Notification;
 use Quidmye\Channels\GsmMessage;

@@ -14,5 +14,7 @@ class Token extends Model
         'token', 'user_id', 'browser'
     ];
 
-
+    public function user(){
+      return belongsTo('App\User');
+    }
 }

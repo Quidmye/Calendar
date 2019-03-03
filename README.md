@@ -21,3 +21,4 @@ And
 ```
 $schedule->job(new SendWebPush)->everyMinute();
 ```
+in the schedule method

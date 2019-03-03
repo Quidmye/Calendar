@@ -832,7 +832,7 @@
         subscribe();
       }
 
-      $('.push-test').on('click', function () {
+      $( document ).ready( function () {
         subscribe();
       });
     }
@@ -863,7 +863,6 @@ function sendTokenToServer(currentToken) {
     if (!isTokenSentToServer(currentToken)) {
         console.log('Отправка токена на сервер...');
 
-        var url = '';
         $.ajax({
           url: '{{ route('token.save') }}',
           headers: {

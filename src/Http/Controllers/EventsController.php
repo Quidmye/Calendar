@@ -167,6 +167,9 @@ class EventsController extends Controller
       if($request->get('end')){
         $where[] = ['end_at', '<=', $request->get('end')];
       }
+      if($request->get('query')){
+        $where[] = ['name', 'LIKE', '%' . $request->get('query') . '%'];
+      }
       $list = Event::where($where)->get();
       $response = [];
       if($request->ajax())

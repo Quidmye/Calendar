@@ -26,6 +26,7 @@
         <!-- /.box-body -->
       </div>
       <!-- /. box -->
+
       <div class="box box-solid">
         <div class="box-header with-border">
           <h3 class="box-title">Create Event</h3>
@@ -72,6 +73,41 @@
         <!-- /.box-body -->
       </div>
       <!-- /. box -->
+
+      <div class="box box-solid">
+        <div class="box-header with-border">
+          <h3 class="box-title">Поиск</h3>
+        </div>
+        <div class="box-body">
+          <form class="ajaxForm" enctype="multipart/form-data" role="form" action="{{ route('events.list') }}" method="post">
+            {{ csrf_field() }}
+            <div class="box-body">
+
+              <div class="form-group">
+                <label for="start_time">Время начала мероприятия</label>
+                <input name="start" type="text" class="form-control eventTimePicker  push-test" id="start" placeholder="Время начала мероприятия">
+              </div>
+              <div class="form-group">
+                <label for="end">Время конца мероприятия</label>
+                <input name="end" type="text" class="form-control eventTimePicker" id="end" placeholder="Время конца мероприятия">
+              </div>
+            <!-- /btn-group -->
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Название">
+
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-primary btn-flat">Поиск</button>
+              </div>
+              <!-- /btn-group -->
+            </div>
+          </form>
+
+          <!-- /input-group -->
+        </div>
+      </div>
+    </div>
+
+
     </div>
     <!-- /.col -->
   </div>

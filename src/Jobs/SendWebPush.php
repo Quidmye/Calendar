@@ -4,6 +4,7 @@ namespace Quidmye\Jobs;
 
 use Carbon\Carbon;
 use Quidmye\Models\Event;
+use Quidmye\Notifications\EventNotification;
 use Illuminate\Foundation\Bus\Dispatchable;
 
 class SendWebPush

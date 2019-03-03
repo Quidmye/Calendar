@@ -25,7 +25,7 @@ class SendWebPush
           ->chunk(100, function($events){
               foreach ($events as $event) {
                 foreach ($event->user->tokens as $token) {
-                  Notification::route('gcm', $token->token)->notify(new EventNotification($event));
+                  \Notification::route('gcm', $token->token)->notify(new EventNotification($event));
                 }
               }
           });

@@ -11,7 +11,7 @@ class Token extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'token', 'user_id'
+        'token', 'user_id', 'browser'
     ];
 
 

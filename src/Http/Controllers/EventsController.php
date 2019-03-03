@@ -97,7 +97,7 @@ class EventsController extends Controller
 
       $event->update($data);
       dd($request);
-      if($request->hasFile('event_files')){ 
+      if($request->hasFile('event_files')){
         $this->uploadFile($request->event_files, $event);
       }
 
@@ -130,7 +130,7 @@ class EventsController extends Controller
 
         $event = Event::create($data);
 
-        if($request->has('event_files')){
+        if($request->hasFile('event_files')){
           $this->uploadFile($request->event_files, $event);
         }
 

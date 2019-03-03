@@ -22,15 +22,6 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/assets/Quidmye/css/_all-skins.css">
-  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-<script>
-  var OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "9f1ab67d-067f-4d5a-9491-7368d9d293de",
-    });
-  });
-</script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,7 +39,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="../index2.html" class="logo">
+    <a href="/" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -755,6 +746,8 @@
 <script src="/assets/Quidmye/js/moment/moment.js"></script>
 <script src="/assets/Quidmye/js/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="/assets/Quidmye/js/fullcalendar/dist/fullcalendar.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+<script type="text/javascript" src="/firebase-messaging-sw.js"></script>
 
 <script>
 
@@ -830,7 +823,27 @@
         });
         return false;
     });
+    var config = {
+        messagingSenderId: '828731257045'
+    };
+    firebase.initializeApp(config);
+ const messaging = firebase.messaging();
+ messaging
+   .requestPermission()
+   .then(function () {
+     MsgElem.innerHTML = "Notification permission granted."
+     console.log("Notification permission granted.");
 
+     // get the token in the form of promise
+     return messaging.getToken()
+   })
+   .then(function(token) {
+     // print the token on the HTML page
+     console.log(token);
+   })
+   .catch(function (err) {
+   console.log("Unable to get permission to notify.", err);
+ });
   @yield('script')
 })
 </script>

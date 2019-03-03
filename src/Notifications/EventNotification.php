@@ -4,6 +4,7 @@ namespace Quidmye\Notifications;
 
 use Illuminate\Notifications\Notification;
 use Quidmye\Channels\GsmMessage;
+use Quidmye\Channels\GsmChannel;
 
 class EventNotification extends Notification
 {

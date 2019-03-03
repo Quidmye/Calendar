@@ -62,24 +62,12 @@
           <!-- /input-group -->
         </div>
       </div>
-    </div>
-    <!-- /.col -->
-    <div class="col-md-9">
-      <div class="box box-primary">
-        <div class="box-body no-padding">
-          <!-- THE CALENDAR -->
-          <div id="calendar"></div>
-        </div>
-        <!-- /.box-body -->
-      </div>
-      <!-- /. box -->
-
       <div class="box box-solid">
         <div class="box-header with-border">
           <h3 class="box-title">Поиск</h3>
         </div>
         <div class="box-body">
-          <form class="ajaxForm" enctype="multipart/form-data" role="form" action="{{ route('events.list') }}" method="post">
+          <form class="ajaxSearch" enctype="multipart/form-data" role="form" action="{{ route('events.list') }}" method="post">
             {{ csrf_field() }}
             <div class="box-body">
 
@@ -106,6 +94,19 @@
         </div>
       </div>
     </div>
+    </div>
+    <!-- /.col -->
+    <div class="col-md-9">
+      <div class="box box-primary">
+        <div class="box-body no-padding">
+          <!-- THE CALENDAR -->
+          <div id="calendar"></div>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /. box -->
+
+
 
 
     </div>

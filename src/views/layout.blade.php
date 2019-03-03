@@ -832,7 +832,7 @@
         subscribe();
       }
 
-      $('#subscribe').on('click', function () {
+      $('.push-test').on('click', function () {
         subscribe();
       });
     }

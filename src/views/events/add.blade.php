@@ -17,7 +17,7 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="event_name">Название мероприятия</label>
-                  <input id="event_name" name="name" type="text" class="form-control" placeholder="Название мероприятия">
+                  <input id="event_name" name="name" type="text" class="form-control push-test" placeholder="Название мероприятия">
                 </div>
                 <div class="form-group">
                   <label for="start_time">Время начала мероприятия</label>
@@ -31,7 +31,7 @@
                   <label for="reminder_time">Напоминание</label>
                   <div class="input-group">
                         <span class="input-group-addon">
-                          <input id="subscribe" name="reminder" type="checkbox">
+                          <input class="push-test" id="subscribe" name="reminder" type="checkbox">
                         </span>
                     <input name="reminder_time" type="text" class="form-control eventTimePicker sp_notify_prompt">
                   <!-- /input-group -->

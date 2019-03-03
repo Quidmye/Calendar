@@ -25,7 +25,7 @@ Route::prefix('event')->namespace('Quidmye\Http\Controllers')->group(function ()
 
 Route::prefix('events')->namespace('Quidmye\Http\Controllers')->group(function () {
     Route::get('/', 'EventsController@list')->name('events.list');
-    Route::get('/', function(){
+    Route::get('/ee', function(){
       $url = 'https://fcm.googleapis.com/fcm/send';
 $YOUR_API_KEY = 'AIzaSyDfB_prNUE_T7cvkdkhE-IUZBEfAWTb_7U'; // Server key
 $YOUR_TOKEN_ID = 'fKPRrA1X_Xk:APA91bENOVMqqtYIvAFLcOfwEjRxpOKa0xb7tRYgPYnwT0ztwaNdBMsNqgpY2tl-jbvy1yca7eAWR39XLmq7pyGFJ-e8lJ3sx_nofXoGtlauv2T17WGeBE15qo3482o7-Nbq2zGTLRws'; // Client token id

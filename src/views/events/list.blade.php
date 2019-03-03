@@ -72,17 +72,10 @@
             <div class="box-body">
             <!-- /btn-group -->
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Название">
-
-              <div class="input-group-btn">
-                <button type="button" class="btn btn-primary btn-flat">Поиск</button>
-              </div>
-              <!-- /btn-group -->
+              <input name="search-query" type="text" class="form-control" placeholder="Введите название">
             </div>
           </form>
-
-          <!-- /input-group -->
-        </div>
+          <div id="search-results"></div>
       </div>
     </div>
     </div>
@@ -107,7 +100,9 @@
 </section>
 @endsection
 @section('script')
+$('input[name=search-query]').on('change', function(){
 
+});
   /* initialize the external events
    -----------------------------------------------------------------*/
   function init_events(ele) {

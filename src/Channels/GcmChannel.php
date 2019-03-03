@@ -49,6 +49,7 @@ class GcmChannel
         'notification' => [
           'title' => $message->title,
           'body'  => $message->message,
+          'action' => $message->action
         ],
       ];
 

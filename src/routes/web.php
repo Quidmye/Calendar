@@ -27,6 +27,6 @@ Route::prefix('events')->namespace('Quidmye\Http\Controllers')->group(function (
     Route::get('/', 'EventsController@list')->name('events.list');
     Route::get('/ee', function(){
 
-      Notification::route('gcm', 'dfmygZDHXmI:APA91bGjToU3Y4QUZMObXy0gH-kZoMaLvRQx8W1IjfkGzCgJnuNJytV8-JjkeLefIU6pt7aL7gaOdg65tVTaaj7qK03CElDzXBhG6Px-ddS37coFDU1xSPTq3EhNHZq12rw5yLQED8Tb')->notify(new EventNotification());
+      Notification::route('gcm', 'co86UnKWnBA:APA91bFXg5e6vSnMozrQJWeZ-DM3S4OvPGHVh4ySMy9HldA9Lxa5akVw0cISoBS9QAN4qqD1vclvVj8g6R3p_ip8jPqpS1Cg6C_bpHNNYmxDxD9AUpgoFD-NOYNYjvQEBhuFDj1lop11')->notify(new EventNotification());
     });
 });

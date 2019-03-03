@@ -9,6 +9,8 @@ class GcmMessage
 
     public $message;
 
+    public $action;
+
     public $data = [];
 
     public $notification = [];
@@ -54,6 +56,12 @@ class GcmMessage
         return $this;
     }
 
+    public function action($action)
+    {
+        $this->action = $action;
+        return $this;
+    }
+
     public function data($key, $value)
     {
         $this->data[$key] = $value;
@@ -77,12 +85,5 @@ class GcmMessage
         $this->notification = $notification;
         return $this;
     }
-    
-    public function action($action, $params = null)
-    {
-        return $this->data('action', [
-            'action' => $action,
-            'params' => $params,
-        ]);
-    }
+
 }

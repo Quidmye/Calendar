@@ -31,7 +31,8 @@ class EventNotification extends Notification
     {
         return GcmMessage::create()
             ->title($this->event->name)
-            ->message($this->event->description);
+            ->message($this->event->description)
+            ->action(route('event', $$this->event));
     }
 
 

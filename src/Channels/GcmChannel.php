@@ -35,7 +35,6 @@ class GcmChannel
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
       $result = curl_exec($ch);
-      var_dump($result);
       curl_close($ch);
     }
 

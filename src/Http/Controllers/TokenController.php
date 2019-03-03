@@ -22,7 +22,7 @@ class TokenController extends Controller
       $token = Token::create([
         'token' => $request->get('token'),
         'user_id' => \Auth::user()->id,
-        'browser' => get_browser()['browser']
+        'browser' => get_browser(null, true)['browser']
       ]);
 
 

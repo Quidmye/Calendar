@@ -10,11 +10,11 @@ class User extends Model
 
     public function events()
     {
-        return $this->hasMany('Quidmye\Event');
+        return $this->hasMany('Quidmye\Models\Event');
     }
 
     public function tokens()
     {
-        return $this->hasMany('Quidmye\Token');
+        return $this->hasMany('Quidmye\Models\Token');
     }
 }

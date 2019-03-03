@@ -12,3 +12,12 @@ crontab -e
 ```
 GCM_KEY=YOUR_KEY
 ```
+
+App\Console\Kernel.php
+```
+use Quidmye\Jobs\SendWebPush;
+```
+And
+```
+$schedule->job(new SendWebPush)->everyMinute();
+```

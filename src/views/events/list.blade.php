@@ -112,7 +112,8 @@ $('input[name=search-query]').on('change', function(){
         }
       }).done(function(data){
         $.each(data, function(key, event) {
-          ellem = $('<a class="btn btn-default btn-block" href="' + event.url + '"><strong>' + Date.parse(event.start).format('m.dd h:MM TT') + '</strong> - ' + event.title + '</a>');
+          var formatted = $.datepicker.formatDate("m.dd h:MM TT", new Date(event.start));
+          ellem = $('<a class="btn btn-default btn-block" href="' + event.url + '"><strong>' + formatted + '</strong> - ' + event.title + '</a>');
           $('#search-results').append(ellem);
         });
 

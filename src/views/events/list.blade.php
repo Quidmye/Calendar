@@ -69,7 +69,6 @@
         <div class="box-body">
           <form class="ajaxSearch" enctype="multipart/form-data" role="form" action="{{ route('events.list') }}" method="post">
             {{ csrf_field() }}
-            <div class="box-body">
             <!-- /btn-group -->
             <div class="input-group">
               <input name="search-query" type="text" class="form-control" placeholder="Введите название">

@@ -1,5 +1,5 @@
 <?php
-use Quidmy\Notifications\EventNotification;
+use Quidmye\Notifications\EventNotification;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

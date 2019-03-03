@@ -9,14 +9,11 @@ use Quidmye\Channels\GcmChannel;
 class EventNotification extends Notification
 {
 
-    /**
-     * Create a new notification instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    publi $event;
+
+    public function __construct($event)
     {
-        //
+        $this->event = $event;
     }
 
     /**
@@ -32,9 +29,10 @@ class EventNotification extends Notification
 
     public function toGcm($notifiable = null)
     {
+      dd($notifiable);
         return GcmMessage::create()
-            ->title($notifiable->name)
-            ->message($notifiable->description);
+            ->title($this->event->name)
+            ->message($this->event->description);
     }
 
 

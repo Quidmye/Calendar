@@ -29,7 +29,6 @@ class EventNotification extends Notification
 
     public function toGcm($notifiable = null)
     {
-      dd($notifiable);
         return GcmMessage::create()
             ->title($this->event->name)
             ->message($this->event->description);

@@ -747,7 +747,6 @@
 <script src="/assets/Quidmye/js/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="/assets/Quidmye/js/fullcalendar/dist/fullcalendar.min.js"></script>
 <script type="text/javascript" src="//www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
-<script type="text/javascript" src="/firebase-messaging-sw.js"></script>
 <script>
 
   $(function () {
@@ -822,26 +821,77 @@
         });
         return false;
     });
-    var config = {
-        messagingSenderId: '828731257045'
-    };
-    firebase.initializeApp(config);
- const messaging = firebase.messaging();
- messaging
-   .requestPermission()
-   .then(function () {
-     console.log("Notification permission granted.");
+    firebase.initializeApp({
+      messagingSenderId: '828731257045'
+    });
 
-     // get the token in the form of promise
-     return messaging.getToken()
-   })
-   .then(function(token) {
-     // print the token on the HTML page
-     console.log(token);
-   })
-   .catch(function (err) {
-   console.log("Unable to get permission to notify.", err);
- });
+    if ('Notification' in window) {
+      var messaging = firebase.messaging();
+
+      if (Notification.permission === 'granted') {
+        subscribe();
+      }
+
+      $('#subscribe').on('click', function () {
+        subscribe();
+      });
+    }
+
+    function subscribe() {
+      messaging.requestPermission()
+        .then(function () {
+            messaging.getToken()
+                .then(function (currentToken) {
+                    if (currentToken) {
+                        sendTokenToServer(currentToken);
+                    } else {
+                        console.warn('Не удалось получить токен.');
+                        setTokenSentToServer(false);
+                    }
+                })
+                .catch(function (err) {
+                    console.warn('При получении токена произошла ошибка.', err);
+                    setTokenSentToServer(false);
+                });
+    })
+    .catch(function (err) {
+        console.warn('Не удалось получить разрешение на показ уведомлений.', err);
+    });
+}
+
+function sendTokenToServer(currentToken) {
+    if (!isTokenSentToServer(currentToken)) {
+        console.log('Отправка токена на сервер...');
+
+        var url = '';
+        $.ajax({
+          url: '{{ route('token.save') }}',
+          headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
+          type: "POST",
+          data: {
+            token: currentToken
+          }
+        });
+        setTokenSentToServer(currentToken);
+    } else {
+        console.log('Токен уже отправлен на сервер.');
+    }
+}
+
+// используем localStorage для отметки того,
+// что пользователь уже подписался на уведомления
+function isTokenSentToServer(currentToken) {
+    return window.localStorage.getItem('sentFirebaseMessagingToken') == currentToken;
+}
+
+function setTokenSentToServer(currentToken) {
+    window.localStorage.setItem(
+        'sentFirebaseMessagingToken',
+        currentToken ? currentToken : ''
+    );
+}
   @yield('script')
 })
 </script>

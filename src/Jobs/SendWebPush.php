@@ -10,12 +10,10 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-class SendWebPush implements ShouldQueue
+class SendWebPush
 {
 
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
-    protected $event;
 
     public function __construct()
     {

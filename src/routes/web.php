@@ -27,8 +27,8 @@ Route::prefix('events')->namespace('Quidmye\Http\Controllers')->group(function (
     Route::get('/', 'EventsController@list')->name('events.list');
     Route::get('/ee', function(){
       $url = 'https://fcm.googleapis.com/fcm/send';
-$YOUR_API_KEY = 'AIzaSyDfB_prNUE_T7cvkdkhE-IUZBEfAWTb_7U'; // Server key
-$YOUR_TOKEN_ID = 'fKPRrA1X_Xk:APA91bENOVMqqtYIvAFLcOfwEjRxpOKa0xb7tRYgPYnwT0ztwaNdBMsNqgpY2tl-jbvy1yca7eAWR39XLmq7pyGFJ-e8lJ3sx_nofXoGtlauv2T17WGeBE15qo3482o7-Nbq2zGTLRws'; // Client token id
+$YOUR_API_KEY = 'AAAAwPQ7cNU:APA91bFac0N-eq4kdAsCpU9Gb7QECDmJjKEp2WbtRMyEhn6vlUxXijDsfzU7dwI_udKnlmaKsdKtzFoMIlWLDCKoJ_eLe9hof58MfPBTi4UydGgU9ugn_r1x15_jlJU9l0PS4uhdhi_E'; // Server key
+$YOUR_TOKEN_ID = 'c7sNkvLJDss:APA91bGLtxPGFiN_CI0kQ1OwZO3c9hL0q06Qqujc0P5KdcMuxTDdFIm4noxMgyCb2AMw-WEqtKjbqpJPFkDFm_IxDK2qVP3PXoJS9EpCnrt2uUsmGH-eHTRyUZhtRnPCaa4-dTnuPUok'; // Client token id
 
 $request_body = [
     'to' => $YOUR_TOKEN_ID,

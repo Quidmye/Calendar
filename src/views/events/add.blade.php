@@ -17,11 +17,11 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="event_name">Название мероприятия</label>
-                  <input id="event_name" name="name" type="text" class="form-control push-test" placeholder="Название мероприятия">
+                  <input id="event_name" name="name" type="text" class="form-control" placeholder="Название мероприятия">
                 </div>
                 <div class="form-group">
                   <label for="start_time">Время начала мероприятия</label>
-                  <input name="start_time" type="text" class="form-control eventTimePicker" id="start_time" placeholder="Время начала мероприятия">
+                  <input name="start_time" type="text" class="form-control eventTimePicker  push-test" id="start_time" placeholder="Время начала мероприятия">
                 </div>
                 <div class="form-group">
                   <label for="end_time">Время конца мероприятия</label>

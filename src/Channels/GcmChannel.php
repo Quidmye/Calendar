@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Channels;
+namespace Quidmye\Channels;
 
 use Illuminate\Notifications\Notification;
 
@@ -18,7 +18,7 @@ class GcmChannel
     public function send($notifiable, Notification $notification)
     {
       $this->recipients = (array) $notifiable->routeNotificationFor('gcm', $notification);
-      
+
       $this->message = $notification->toGcm($notifiable);
       if (! $this->message) {
           return;

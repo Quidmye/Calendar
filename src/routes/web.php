@@ -25,4 +25,37 @@ Route::prefix('event')->namespace('Quidmye\Http\Controllers')->group(function ()
 
 Route::prefix('events')->namespace('Quidmye\Http\Controllers')->group(function () {
     Route::get('/', 'EventsController@list')->name('events.list');
+    Route::get('/', function(){
+      $url = 'https://fcm.googleapis.com/fcm/send';
+$YOUR_API_KEY = 'AIzaSyDfB_prNUE_T7cvkdkhE-IUZBEfAWTb_7U'; // Server key
+$YOUR_TOKEN_ID = 'fKPRrA1X_Xk:APA91bENOVMqqtYIvAFLcOfwEjRxpOKa0xb7tRYgPYnwT0ztwaNdBMsNqgpY2tl-jbvy1yca7eAWR39XLmq7pyGFJ-e8lJ3sx_nofXoGtlauv2T17WGeBE15qo3482o7-Nbq2zGTLRws'; // Client token id
+
+$request_body = [
+    'to' => $YOUR_TOKEN_ID,
+    'notification' => [
+        'title' => 'Ералаш',
+        'body' => sprintf('Начало в %s.', date('H:i')),
+        'icon' => 'https://eralash.ru.rsz.io/sites/all/themes/eralash_v5/logo.png?width=192&height=192',
+        'click_action' => 'http://eralash.ru/',
+    ],
+];
+$fields = json_encode($request_body);
+
+$request_headers = [
+    'Content-Type: application/json',
+    'Authorization: key=' . $YOUR_API_KEY,
+];
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+curl_setopt($ch, CURLOPT_HTTPHEADER, $request_headers);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+    });
 });

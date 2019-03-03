@@ -112,6 +112,8 @@ $('input[name=search-query]').on('change', function(){
         }
       }).done(function(data){
         $.each(data, function(key, event) {
+          console.log(event);
+          console.log(key);
           ellem = $('<a class="btn btn-default btn-block" href="' + data.url + '"><strong>' + data.start + '</strong> - ' + data.title + '</a>');
           $('#search-results').append(ellem);
         });

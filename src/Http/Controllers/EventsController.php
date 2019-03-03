@@ -96,7 +96,7 @@ class EventsController extends Controller
       }
 
       $event->update($data);
-
+      dd($request);
       if($request->hasFile('event_files')){
         $this->uploadFile($request->event_files, $event);
       }

@@ -34,9 +34,9 @@ class GcmChannel
       curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($this->data));
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-      curl_exec($ch);
+      $result = curl_exec($ch);
+      var_dump($result);
       curl_close($ch);
-      echo json_encode($this->data);
     }
 
     public function setData($tokens, $message){

@@ -11,6 +11,7 @@ class GcmChannel
   protected $subject;
   protected $message;
   protected $key;
+  protected $data;
   protected $headers;
   protected $server = "https://fcm.googleapis.com/fcm/send";
 
@@ -29,11 +30,11 @@ class GcmChannel
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL, $this->server);
       curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-      curl_setopt($ch, CURLOPT_HTTPHEADER, $request_headers);
-      curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+      curl_setopt($ch, CURLOPT_HTTPHEADER, $this->headers);
+      curl_setopt($ch, CURLOPT_POSTFIELDS, $this->data);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-      $response = curl_exec($ch);
+      curl_exec($ch);
       curl_close($ch);
     }
 
@@ -43,7 +44,7 @@ class GcmChannel
         'Content-Type: application/json',
         'Authorization: key=' . $this->key,
       ];
-      $data =  [
+      $this->data =  [
         'to' => $this->recipients,
         'notification' => [
           'title' => $message->title,

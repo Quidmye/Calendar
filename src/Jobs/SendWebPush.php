@@ -4,16 +4,12 @@ namespace Quidmye\Jobs;
 
 use Carbon\Carbon;
 use Quidmye\Models\Event;
-use Illuminate\Bus\Queueable;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
 class SendWebPush
 {
 
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable;
 
     public function __construct()
     {
@@ -29,7 +25,6 @@ class SendWebPush
           ->chunk(100, function($events){
               foreach ($events as $event) {
                 foreach ($event->user->tokens as $token) {
-                  dd($events);
                   Notification::route('gcm', $token->token)->notify(new EventNotification($event));
                 }
               }

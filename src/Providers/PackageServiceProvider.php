@@ -21,7 +21,10 @@ class PackageServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__.'/../translations', 'Qcalendar');
         $this->loadMigrationsFrom(__DIR__.'/../migrations');
         $this->publishes([
-        __DIR__.'/../../resources/assets' => public_path('assets/Quidmye'),
-    ], 'Qcalendar');
+          __DIR__.'/../../resources/assets' => public_path('assets/Quidmye'),
+        ], 'Qcalendar');
+        $this->publishes([
+          __DIR__.'/../../resources/firebase' => public_path('/'),
+        ], 'Qcalendar');
     }
 }

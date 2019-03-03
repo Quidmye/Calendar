@@ -21,8 +21,7 @@ class TokenController extends Controller
     public function save(Request $request){
       $token = Token::create([
         'token' => $request->get('token'),
-        'user_id' => \Auth::user()->id,
-        'browser' => get_browser(null, true)['browser']
+        'user_id' => \Auth::user()->id
       ]);
 
 

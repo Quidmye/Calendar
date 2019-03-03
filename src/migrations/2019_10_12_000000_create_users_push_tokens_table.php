@@ -16,7 +16,6 @@ class CreateUsersPushTokensTable extends Migration
         Schema::create('users_push_tokens', function (Blueprint $table) {
             $table->increments('id');
             $table->string('token');
-            $table->string('browser');
             $table->unsignedInteger('user_id');
 
             $table->foreign('user_id')->references('id')->on('users')

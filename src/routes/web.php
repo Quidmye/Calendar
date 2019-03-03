@@ -1,5 +1,4 @@
 <?php
-use Quidmye\Notifications\EventNotification;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,8 +24,4 @@ Route::prefix('event')->namespace('Quidmye\Http\Controllers')->group(function ()
 
 Route::prefix('events')->namespace('Quidmye\Http\Controllers')->group(function () {
     Route::get('/', 'EventsController@list')->name('events.list');
-    Route::get('/ee', function(){
-
-      Notification::route('gcm', 'co86UnKWnBA:APA91bFXg5e6vSnMozrQJWeZ-DM3S4OvPGHVh4ySMy9HldA9Lxa5akVw0cISoBS9QAN4qqD1vclvVj8g6R3p_ip8jPqpS1Cg6C_bpHNNYmxDxD9AUpgoFD-NOYNYjvQEBhuFDj1lop11')->notify(new EventNotification());
-    });
 });

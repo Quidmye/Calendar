@@ -278,7 +278,7 @@
 
                 <p>
                   Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  <small>{{ date('H:i') }}</small>
                 </p>
               </li>
               <!-- Menu Body -->

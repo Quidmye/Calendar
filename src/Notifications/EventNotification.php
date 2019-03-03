@@ -33,8 +33,8 @@ class EventNotification extends Notification
     public function toGcm($notifiable = null)
     {
         return GcmMessage::create()
-            ->title('Account approved')
-            ->message("Your  account was approved!");
+            ->title($notifiable->name)
+            ->message($notifiable->description);
     }
 
 

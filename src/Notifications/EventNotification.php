@@ -9,7 +9,7 @@ use Quidmye\Channels\GcmChannel;
 class EventNotification extends Notification
 {
 
-    publi $event;
+    public $event;
 
     public function __construct($event)
     {

@@ -101,13 +101,14 @@
 @section('script')
 $('input[name=search-query]').on('change', function(){
   $('#search-results').empty();
-  if($(this).val().length >= 3){
+  input = $(this);
+  if(input.val().length >= 3){
     setTimeout(function(){
       $.ajax({
         url: '{{ route('events.list') }}',
         type: "GET",
         data: {
-          query: $(this).val()
+          query: input.val()
         }
       }).done(function(data){
         $.each(data, function(key, event) {

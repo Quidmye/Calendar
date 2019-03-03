@@ -35,7 +35,6 @@ class GcmChannel
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
       $result = curl_exec($ch);
-      file_put_contents('/var/www/www-root/data/www/quidmy.live/ds.txt', $result);
       var_dump($result);
       curl_close($ch);
     }

@@ -23,15 +23,17 @@ class SendWebPush implements ShouldQueue
 
     public function handle()
     {
-        $this->event = Event::where('remider_at', Carbon::now()->format("Y-m-d H:i:00"))
-          ->orWhere('start_at', Carbon::now()->format("Y-m-d H:i:00"))
-            ->chunk(100, function($events){
-                foreach ($events as $event) {
-                  $tokens = $event->user()->tokens()->get();
-                  foreach ($tokens as $token) {
-                    Notification::route('gcm', $token->token)->notify(new EventNotification($event));
-                  }
+      $events = Event::where('reminder_at', Carbon::now()->format("Y-m-d H:i:00"))
+        ->orWhere('start_at', Carbon::now()->format("Y-m-d H:i:00"))->with(array('user' => function($query)
+          {
+              $query->with('tokens');
+          }))
+          ->chunk(100, function($events){
+              foreach ($events as $event) {
+                foreach ($event->user->tokens as $token) {
+                  Notification::route('gcm', $token->token)->notify(new EventNotification($event));
                 }
-            });
+              }
+          });
     }
 }

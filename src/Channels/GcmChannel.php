@@ -46,7 +46,7 @@ class GcmChannel
         'Authorization: key=' . $this->key,
       ];
       $this->data =  [
-        'to' => $this->recipients,
+        'to' => json_encode($this->recipients),
         'notification' => [
           'title' => $message->title,
           'body'  => $message->message,
